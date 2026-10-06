@@ -1,22 +1,98 @@
-import { motion } from "motion/react"; import { ArrowDown, ArrowUpRight, Menu, X } from "lucide-react"; import { useState } from "react"; import { Button } from "./components/ui/button"; import { AnimatedText } from "./components/AnimatedText";
+import { ArrowDown, ArrowUpRight, Menu, MoveUpRight, X } from "lucide-react";
+import { motion } from "motion/react";
+import { useState } from "react";
+import { AnimatedText } from "./components/AnimatedText";
+import { Button } from "./components/ui/button";
+import { HeroCarousel } from "./components/HeroCarousel";
+import { SectionReveal } from "./components/SectionReveal";
+import { heroSlides, navItems, services } from "./data/site";
 
-const services=[["Vehicle Sales","Find your next vehicle with 846 Autos.","/images/vehicle.jpg"],["Clearing & Forwarding","Moving vehicles and cargo with a service-first approach.","/images/logistics.jpg"],["Car Wash","Professional vehicle care for everyday and special rides.","/images/car-wash.jpg"],["Lounge & Bar","A space to unwind, connect and enjoy the moment.","/images/lounge.jpg"],["Snooker","Relax, play and make the most of your time with us.","/images/snooker.jpg"]];
+function Section({ children, className = "", id }) {
+  return <section id={id} className={`mx-auto w-full max-w-7xl px-5 py-24 md:px-8 md:py-32 ${className}`}>{children}</section>;
+}
 
-function Section({children,className=""}){return <section className={"mx-auto w-full max-w-7xl px-5 py-24 md:px-8 md:py-32 "+className}>{children}</section>}
+function ServiceCard({ service, index }) {
+  return (
+    <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.65, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }} className="group relative min-h-[410px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[.035] md:min-h-[470px]">
+      <img src={service.image} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-60 transition duration-1000 ease-out group-hover:scale-105 group-hover:opacity-75" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/5" />
+      <div className="relative z-10 flex h-full flex-col p-7 md:p-8">
+        <div className="flex items-start justify-between text-xs uppercase tracking-[.24em] text-white/50"><span>{service.number}</span><span>846</span></div>
+        <div className="mt-auto">
+          <h3 className="max-w-md text-3xl font-medium tracking-[-.04em] md:text-4xl">{service.name}</h3>
+          <p className="mt-3 max-w-md text-sm leading-6 text-white/60 md:text-base">{service.description}</p>
+          <a href="#contact" className="mt-6 inline-flex items-center text-sm font-medium text-white transition group-hover:gap-2">Enquire <ArrowUpRight size={15} className="ml-1.5" /></a>
+        </div>
+      </div>
+    </motion.article>
+  );
+}
 
-export default function App(){const [open,setOpen]=useState(false);return <div className="overflow-hidden bg-[#080808] text-white">
-<header className="fixed inset-x-0 top-0 z-50"><div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8"><a href="#" className="text-lg font-black tracking-[-.04em]">846<span className="text-white/40">.</span></a><nav className="hidden items-center gap-8 text-sm text-white/70 md:flex"><a href="#services" className="hover:text-white">Services</a><a href="#vehicles" className="hover:text-white">Vehicles</a><a href="#experience" className="hover:text-white">Experience</a><a href="#contact" className="hover:text-white">Contact</a></nav><button onClick={()=>setOpen(!open)} className="rounded-full border border-white/15 bg-black/30 p-3 backdrop-blur-md md:hidden">{open?<X size={18}/>:<Menu size={18}/>}</button></div>{open&&<div className="mx-4 rounded-2xl border border-white/10 bg-black/90 p-5 backdrop-blur-xl md:hidden"><div className="grid gap-4 text-lg"><a onClick={()=>setOpen(false)} href="#services">Services</a><a onClick={()=>setOpen(false)} href="#vehicles">Vehicles</a><a onClick={()=>setOpen(false)} href="#experience">Experience</a><a onClick={()=>setOpen(false)} href="#contact">Contact</a></div></div>}</header>
+export default function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
 
-<main>
-<section className="relative flex min-h-[92svh] items-end overflow-hidden border-b border-white/10"><div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(255,255,255,.18),transparent_30%),linear-gradient(180deg,rgba(0,0,0,.18),#080808)]"/><div className="absolute inset-0 bg-[url('/images/hero.jpg')] bg-cover bg-center opacity-75"/><div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/25 to-transparent"/><Section className="relative z-10 pb-16 pt-40 md:pb-24"><p className="mb-6 text-xs font-semibold uppercase tracking-[.3em] text-white/55">846 Autos Limited</p><h1 className="max-w-5xl text-[clamp(3.5rem,9vw,8.5rem)] font-semibold leading-[.86] tracking-[-.07em]">More than<br/>just <AnimatedText words={["automotive.","mobility.","lifestyle.","experience."]}/></h1><div className="mt-10 flex flex-col gap-4 sm:flex-row"><Button onClick={()=>document.querySelector("#services")?.scrollIntoView({behavior:"smooth"})}>Explore 846 <ArrowDown size={16} className="ml-2"/></Button><Button variant="outline">Contact us <ArrowUpRight size={16} className="ml-2"/></Button></div></Section></section>
+  return (
+    <div className="overflow-hidden bg-[#070707] text-white">
+      <header className="fixed inset-x-0 top-0 z-50">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
+          <a href="#" className="group flex items-center gap-2" aria-label="846 Autos home"><span className="text-xl font-black tracking-[-.08em]">846</span><span className="h-1.5 w-1.5 rounded-full bg-white/70 transition group-hover:scale-125" /></a>
+          <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-black/30 p-1.5 backdrop-blur-xl md:flex">
+            {navItems.map((item) => <a key={item.href} href={item.href} className="rounded-full px-4 py-2 text-xs font-medium text-white/60 transition hover:bg-white/[.08] hover:text-white">{item.label}</a>)}
+          </nav>
+          <a href="#contact" className="hidden items-center gap-2 rounded-full border border-white/15 bg-white/[.05] px-4 py-2.5 text-xs font-medium text-white/80 backdrop-blur-md transition hover:bg-white/10 md:inline-flex">Contact <MoveUpRight size={14} /></a>
+          <button type="button" onClick={() => setMenuOpen((v) => !v)} className="grid size-11 place-items-center rounded-full border border-white/15 bg-black/40 backdrop-blur-md md:hidden" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen}>{menuOpen ? <X size={18} /> : <Menu size={18} />}</button>
+        </div>
+        {menuOpen && (
+          <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="mx-4 rounded-2xl border border-white/10 bg-[#0b0b0b]/95 p-3 shadow-2xl backdrop-blur-xl md:hidden">
+            {navItems.map((item) => <a key={item.href} href={item.href} onClick={closeMenu} className="flex items-center justify-between rounded-xl px-4 py-3.5 text-sm text-white/75 transition hover:bg-white/[.06] hover:text-white">{item.label}<ArrowUpRight size={15} /></a>)}
+          </motion.nav>
+        )}
+      </header>
 
-<Section><motion.div initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:.7}}><p className="text-sm uppercase tracking-[.25em] text-white/40">The 846 approach</p><h2 className="mt-5 max-w-4xl text-4xl font-medium tracking-[-.04em] md:text-6xl">One destination for movement, care, connection and good times.</h2></motion.div></Section>
+      <main>
+        <section className="relative flex min-h-[94svh] items-end overflow-hidden border-b border-white/10">
+          <HeroCarousel slides={heroSlides} />
+          <Section className="relative z-10 pb-16 pt-40 md:pb-24">
+            <div className="max-w-6xl">
+              <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}>
+                <div className="mb-7 flex flex-wrap items-center gap-3 text-[10px] font-semibold uppercase tracking-[.28em] text-white/55 md:text-xs">
+                  <span className="rounded-full border border-white/15 bg-black/25 px-3 py-1.5 backdrop-blur-md">846 Autos Limited</span><span className="text-white/30">Working demo</span>
+                </div>
+                <h1 className="max-w-6xl text-[clamp(3.4rem,9.2vw,9rem)] font-semibold leading-[.86] tracking-[-.075em]">More than<br />just <AnimatedText words={["automotive.", "mobility.", "lifestyle.", "experience."]} /></h1>
+                <p className="mt-8 max-w-xl text-sm leading-6 text-white/60 md:text-base">A premium digital front door for a business that brings vehicles, movement, care and leisure together.</p>
+                <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                  <Button onClick={() => document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })}>Explore 846 <ArrowDown size={16} /></Button>
+                  <Button variant="outline" onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}>Start a conversation <ArrowUpRight size={16} /></Button>
+                </div>
+              </motion.div>
+            </div>
+          </Section>
+        </section>
 
-<Section id="services" className="pt-8"><div className="mb-12 flex items-end justify-between"><div><p className="text-sm uppercase tracking-[.25em] text-white/40">What we do</p><h2 className="mt-3 text-4xl font-medium tracking-[-.04em] md:text-6xl">Our services</h2></div></div><div className="grid gap-4 md:grid-cols-2">{services.map(([name,desc,img],i)=><motion.article key={name} initial={{opacity:0,y:35}} whileInView={{opacity:1,y:0}} viewport={{once:true,margin:"-80px"}} transition={{delay:i*.08,duration:.65}} className="group relative min-h-[360px] overflow-hidden rounded-3xl border border-white/10 bg-white/[.03] p-7 md:min-h-[440px]"><div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent"/><div className="absolute inset-0 bg-white/[.04] transition duration-700 group-hover:scale-105 group-hover:bg-white/[.08]"/><div className="relative z-10 flex h-full flex-col justify-end"><span className="mb-auto text-sm text-white/35">0{i+1}</span><h3 className="text-3xl font-medium tracking-[-.03em]">{name}</h3><p className="mt-3 max-w-md text-white/55">{desc}</p><a href="#contact" className="mt-6 inline-flex w-fit items-center text-sm font-medium">Learn more <ArrowUpRight size={16} className="ml-2 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"/></a></div></motion.article>)}</div></Section>
+        <Section className="border-b border-white/10">
+          <SectionReveal><div className="grid gap-10 md:grid-cols-[.65fr_1.35fr] md:items-end"><p className="text-xs font-semibold uppercase tracking-[.28em] text-white/35">The 846 approach</p><div><h2 className="max-w-5xl text-4xl font-medium leading-[.98] tracking-[-.055em] md:text-6xl lg:text-7xl">One destination for movement, care, connection and good times.</h2><p className="mt-7 max-w-2xl text-sm leading-6 text-white/50 md:text-base">The site is intentionally structured as a flexible foundation. Verified business details, vehicles and contact channels can be connected as the demo moves toward production.</p></div></div></SectionReveal>
+        </Section>
 
-<Section id="vehicles" className="border-y border-white/10"><div className="grid gap-12 md:grid-cols-[.8fr_1.2fr] md:items-end"><div><p className="text-sm uppercase tracking-[.25em] text-white/40">Vehicles</p><h2 className="mt-4 text-5xl font-medium tracking-[-.05em] md:text-7xl">Drive something worth remembering.</h2></div><div className="text-white/55 md:pb-2"><p>Our vehicle showcase will be connected to verified inventory as the project moves from demo to production.</p></div></div></Section>
+        <Section id="services">
+          <SectionReveal><div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p className="text-xs font-semibold uppercase tracking-[.28em] text-white/35">What we do</p><h2 className="mt-3 text-5xl font-medium tracking-[-.055em] md:text-7xl">Our services.</h2></div><p className="max-w-sm text-sm leading-6 text-white/45">A modular presentation that can later become individual service pages or dashboard-managed content.</p></div></SectionReveal>
+          <div className="grid gap-4 md:grid-cols-2">{services.map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}</div>
+        </Section>
 
-<Section id="experience"><div className="rounded-[2rem] border border-white/10 bg-white/[.03] p-8 md:p-14"><p className="text-sm uppercase tracking-[.25em] text-white/40">Beyond the road</p><div className="mt-10 grid gap-10 md:grid-cols-2"><h2 className="text-5xl font-medium tracking-[-.05em] md:text-7xl">Stay a little longer.</h2><p className="max-w-lg self-end text-lg leading-relaxed text-white/55">From the car wash to the lounge and snooker, 846 brings automotive and lifestyle experiences together in one place.</p></div></div></Section>
+        <Section id="vehicles" className="border-y border-white/10">
+          <SectionReveal><div className="grid gap-12 md:grid-cols-[.85fr_1.15fr] md:items-end"><div><p className="text-xs font-semibold uppercase tracking-[.28em] text-white/35">Vehicles</p><h2 className="mt-5 text-5xl font-medium leading-[.92] tracking-[-.06em] md:text-7xl">Drive something worth remembering.</h2></div><div className="md:pb-2"><div className="rounded-3xl border border-white/10 bg-white/[.03] p-6 md:p-8"><p className="text-xs uppercase tracking-[.24em] text-white/35">Inventory module</p><p className="mt-4 text-lg leading-7 text-white/65">Vehicle listings are intentionally not fabricated in this demo. Verified inventory can be connected here later with photos, specifications, availability and enquiry actions.</p><span className="mt-6 inline-flex items-center rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/45">Ready for real inventory</span></div></div></div></SectionReveal>
+        </Section>
 
-<Section id="contact" className="pb-20"><div className="rounded-[2rem] bg-white p-8 text-black md:p-16"><p className="text-sm uppercase tracking-[.25em] text-black/45">Start a conversation</p><h2 className="mt-5 max-w-3xl text-5xl font-medium tracking-[-.05em] md:text-7xl">Ready when you are.</h2><div className="mt-10"><Button className="bg-black text-white hover:bg-black/90">Contact 846 Autos <ArrowUpRight size={16} className="ml-2"/></Button></div></div></Section>
-</main><footer className="border-t border-white/10 px-5 py-8 md:px-8"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 text-sm text-white/40 md:flex-row"><span>846 Autos Limited</span><span>Demo experience — 2026</span></div></footer></div>}
+        <Section id="experience">
+          <SectionReveal><div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[.035]"><div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(255,255,255,.12),transparent_30%),radial-gradient(circle_at_85%_75%,rgba(255,255,255,.08),transparent_25%)]" /><div className="relative grid min-h-[520px] gap-10 p-8 md:grid-cols-2 md:p-14"><div className="flex flex-col"><p className="text-xs font-semibold uppercase tracking-[.28em] text-white/35">Beyond the road</p><h2 className="mt-auto max-w-xl text-5xl font-medium leading-[.92] tracking-[-.06em] md:text-7xl">Stay a little longer.</h2></div><div className="flex flex-col justify-end"><p className="max-w-lg text-lg leading-8 text-white/55">From vehicle care to the lounge and snooker, the 846 concept extends beyond the car itself and into the experience around it.</p><div className="mt-8 grid grid-cols-3 gap-2">{["Wash", "Lounge", "Snooker"].map((label) => <div key={label} className="rounded-2xl border border-white/10 bg-black/20 p-4 text-center text-xs text-white/50">{label}</div>)}</div></div></div></div></SectionReveal>
+        </Section>
+
+        <Section id="contact" className="pt-8">
+          <SectionReveal><div className="overflow-hidden rounded-[2rem] bg-white p-8 text-black md:p-16"><div className="grid gap-12 md:grid-cols-[1.2fr_.8fr] md:items-end"><div><p className="text-xs font-semibold uppercase tracking-[.28em] text-black/40">Contact</p><h2 className="mt-5 max-w-4xl text-5xl font-medium leading-[.9] tracking-[-.06em] md:text-7xl">Ready when you are.</h2></div><div><p className="text-sm leading-6 text-black/55">Contact details will be connected once the owner confirms the official phone, WhatsApp, email and social channels.</p><Button variant="dark" className="mt-7">Contact 846 Autos <ArrowUpRight size={16} /></Button></div></div></div></SectionReveal>
+        </Section>
+      </main>
+
+      <footer className="border-t border-white/10 px-5 py-8 md:px-8"><div className="mx-auto flex max-w-7xl flex-col gap-5 text-xs text-white/35 md:flex-row md:items-center md:justify-between"><div className="flex items-center gap-2 text-white/60"><span className="font-black tracking-[-.06em]">846</span><span>Autos Limited</span></div><div className="flex flex-wrap gap-x-5 gap-y-2"><span>Demo foundation</span><span>© 2026</span><span>Verified content pending</span></div></div></footer>
+    </div>
+  );
+}
