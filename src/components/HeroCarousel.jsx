@@ -4,17 +4,34 @@ import { useEffect, useRef, useState } from "react";
 
 export function HeroCarousel({ slides }) {
   const [active, setActive] = useState(0);
+  const [direction, setDirection] = useState(1);
   const reduceMotion = useReducedMotion();
   const pointerStart = useRef(null);
 
   useEffect(() => {
     if (reduceMotion || slides.length < 2) return;
-    const timer = window.setInterval(() => setActive((value) => (value + 1) % slides.length), 5200);
+    const timer = window.setInterval(() => {
+      setDirection(1);
+      setActive((value) => (value + 1) % slides.length);
+    }, 5200);
     return () => window.clearInterval(timer);
   }, [reduceMotion, slides.length]);
 
-  const next = () => setActive((value) => (value + 1) % slides.length);
-  const previous = () => setActive((value) => (value - 1 + slides.length) % slides.length);
+  const next = () => {
+    setDirection(1);
+    setActive((value) => (value + 1) % slides.length);
+  };
+
+  const previous = () => {
+    setDirection(-1);
+    setActive((value) => (value - 1 + slides.length) % slides.length);
+  };
+
+  const selectSlide = (index) => {
+    if (index === active) return;
+    setDirection(index > active ? 1 : -1);
+    setActive(index);
+  };
 
   const handlePointerDown = (event) => {
     pointerStart.current = { x: event.clientX, y: event.clientY };
@@ -41,15 +58,16 @@ export function HeroCarousel({ slides }) {
       onPointerUp={handlePointerUp}
       onPointerCancel={() => { pointerStart.current = null; }}
     >
-      <AnimatePresence initial={false}>
+      <AnimatePresence initial={false} custom={direction} mode="popLayout">
         <motion.div
           key={slides[active].src}
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url("${slides[active].src}")` }}
-          initial={reduceMotion ? false : { opacity: 0, scale: 1.035 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.15, ease: "easeInOut" }}
+          custom={direction}
+          initial={reduceMotion ? false : { opacity: 0, x: direction > 0 ? "8%" : "-8%", scale: 1.025 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          exit={reduceMotion ? { opacity: 0 } : { opacity: 0, x: direction > 0 ? "-8%" : "8%", scale: 1.015 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           role="img"
           aria-label={slides[active].alt}
         />
@@ -80,7 +98,7 @@ export function HeroCarousel({ slides }) {
           <button
             key={slide.src}
             type="button"
-            onClick={() => setActive(index)}
+            onClick={() => selectSlide(index)}
             aria-label={`Show slide ${index + 1}`}
             className={`h-1 rounded-full transition-all duration-500 ${index === active ? "w-8 bg-white" : "w-2 bg-white/35"}`}
           />
