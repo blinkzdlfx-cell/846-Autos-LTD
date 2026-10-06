@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color-scheme: dark; background:#080808; color:#f5f5f5; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; background:#080808; }
+body { margin:0; min-width:320px; background:#080808; }
+button,a { -webkit-tap-highlight-color:transparent; }
+::selection { background:#fff; color:#000; }
