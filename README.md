@@ -1,25 +1,33 @@
-# 846 Autos Limited — Demo
+# 846 Autos Limited
 
-**Status: Living Draft / Demo Project**
+Premium React/Vite website demo for 846 Autos Limited.
 
-This repository contains the planning and implementation of a premium website demo for 846 Autos Limited. These documents are intentionally not a final specification. Scope, visual direction, content, architecture, and technical decisions may be refined before and during implementation.
+## Status
 
-## Current direction
+Living implementation draft for owner review.
 
-846 Autos is being treated as a multi-service automotive and lifestyle business, currently including vehicle sales, clearing & forwarding, car wash, lounge/bar, snooker, and other services to be confirmed.
+## Stack
 
-The first version is frontend-only: no database, API, authentication, payments, or admin dashboard.
+React, Vite, Tailwind CSS v4, shadcn/ui conventions, Motion, Lucide icons and Cloudflare Pages.
 
-## Current stack direction
+## Demo features
 
-React + Vite + Tailwind CSS + shadcn/ui + Motion + Lucide. Bootstrap is intentionally excluded to avoid overlapping styling systems and unnecessary overrides. Target deployment: Cloudflare Pages.
+- Responsive premium automotive/lifestyle presentation
+- Automatic hero image carousel with manual controls
+- Continuously cycling hero wording
+- Mobile navigation
+- Scroll-based reveal animations
+- Service presentation
+- Inventory-ready vehicle section without fabricated listings
+- Experience section for car wash, lounge and snooker
+- Contact area ready for verified business channels
+- Reduced-motion support
+- Basic security headers and favicon/robots assets
 
-## Planning documents
+## Content rule
 
-- docs/PROJECT.md — project intent and assumptions
-- docs/SCOPE.md — demo scope and exclusions
-- docs/DESIGN-SYSTEM.md — initial UI and motion direction
-- docs/CONTENT.md — content and verification rules
-- docs/IMPLEMENTATION.md — implementation approach
+Business facts, inventory, prices, testimonials, contact channels and other operational details must be verified before being presented as real. Temporary visual assets are for the demo only.
 
-All documents are living documents.
+## Deployment
+
+See docs/DEPLOYMENT.md. Cloudflare Pages uses npm run build and dist for this React/Vite project.
