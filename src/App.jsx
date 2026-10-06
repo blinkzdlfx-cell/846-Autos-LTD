@@ -59,7 +59,7 @@ export default function App() {
                 <div className="mb-7 flex flex-wrap items-center gap-3 text-[10px] font-semibold uppercase tracking-[.28em] text-white/55 md:text-xs">
                   <span className="rounded-full border border-white/15 bg-black/25 px-3 py-1.5 backdrop-blur-md">846 Autos Limited</span><span className="text-white/30">Working demo</span>
                 </div>
-                <h1 className="max-w-6xl text-[clamp(3.4rem,9.2vw,9rem)] font-semibold leading-[.86] tracking-[-.075em]">More than<br />just <AnimatedText words={["automotive.", "mobility.", "lifestyle.", "experience."]} /></h1>
+                <h1 className="max-w-6xl text-[clamp(3.4rem,9.2vw,9rem)] font-semibold leading-[.86] tracking-[-.075em]">More than<br /><span className="inline-block">just</span> <br className="sm:hidden" /><AnimatedText words={["automotive.", "mobility.", "lifestyle.", "experience."]} /></h1>
                 <p className="mt-8 max-w-xl text-sm leading-6 text-white/60 md:text-base">A premium digital front door for a business that brings vehicles, movement, care and leisure together.</p>
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                   <Button onClick={() => document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })}>Explore 846 <ArrowDown size={16} /></Button>
