@@ -2,20 +2,28 @@
 
 Status: Living Draft
 
-## Cloudflare Pages
+## Cloudflare Workers
 
-- Framework/preset: React (Vite)
+This project is deployed as a Vite-built React SPA using **Cloudflare Workers Static Assets**.
+
+- Provider: Cloudflare Workers
 - Production branch: main
-- Build command: npm run build
-- Build directory: dist
-- Root directory: /
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Static asset directory: `dist`
+- Root directory: `/`
 - Environment variables: none required for the current demo
 
-Cloudflare installs dependencies, runs the Vite build, and publishes dist.
+`wrangler.jsonc` is the source of truth for the Worker deployment. It points Cloudflare to the Vite output in `dist` and enables SPA fallback so client-side routes resolve to `index.html`.
 
 ## Git workflow
 
-Connected Git integration can deploy pushes to main and provide preview deployments for branches or pull requests.
+Workers Builds can connect this GitHub repository and run:
+
+1. `npm run build`
+2. `npx wrangler deploy`
+
+Pushes to the configured production branch can therefore build and deploy the site automatically.
 
 ## Current demo boundary
 
