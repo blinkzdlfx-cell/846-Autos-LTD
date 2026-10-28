@@ -3,6 +3,10 @@ name: Build
 on:
   push:
 
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,3 +19,5 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Build production bundle
         run: npm run build
+      - name: Smoke-test production routes and assets
+        run: npm run test:smoke

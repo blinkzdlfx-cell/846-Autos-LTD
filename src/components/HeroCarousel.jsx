@@ -1,21 +1,22 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 export function HeroCarousel({ slides }) {
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [isPlaying, setIsPlaying] = useState(true);
   const reduceMotion = useReducedMotion();
   const pointerStart = useRef(null);
 
   useEffect(() => {
-    if (reduceMotion || slides.length < 2) return;
+    if (reduceMotion || !isPlaying || slides.length < 2) return;
     const timer = window.setInterval(() => {
       setDirection(1);
       setActive((value) => (value + 1) % slides.length);
     }, 5200);
     return () => window.clearInterval(timer);
-  }, [reduceMotion, slides.length]);
+  }, [isPlaying, reduceMotion, slides.length]);
 
   const next = () => {
     setDirection(1);
@@ -53,6 +54,8 @@ export function HeroCarousel({ slides }) {
   return (
     <div
       className="absolute inset-0 touch-pan-y select-none"
+      role="region"
+      aria-roledescription="carousel"
       aria-label="846 Autos visual showcase"
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
@@ -100,9 +103,19 @@ export function HeroCarousel({ slides }) {
             type="button"
             onClick={() => selectSlide(index)}
             aria-label={`Show slide ${index + 1}`}
+            aria-pressed={index === active}
             className={`h-1 rounded-full transition-all duration-500 ${index === active ? "w-8 bg-white" : "w-2 bg-white/35"}`}
           />
         ))}
+        <button
+          type="button"
+          onClick={() => setIsPlaying((playing) => !playing)}
+          aria-label={isPlaying ? "Pause automatic image rotation" : "Resume automatic image rotation"}
+          aria-pressed={!isPlaying}
+          className="ml-1 grid size-6 place-items-center rounded-full text-white/70 transition hover:bg-white/10 hover:text-white"
+        >
+          {isPlaying ? <Pause size={12} /> : <Play size={12} />}
+        </button>
       </div>
     </div>
   );
