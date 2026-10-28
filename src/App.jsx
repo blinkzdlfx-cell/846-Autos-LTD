@@ -86,6 +86,15 @@ export default function App() {
     document.querySelector('meta[property="og:description"]')?.setAttribute("content", metadata.description);
   }, [pathname]);
 
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [menuOpen]);
+
   const closeMenu = () => setMenuOpen(false);
   const experienceServices = services.filter((service) => ["Lounge & Bar", "Snooker"].includes(service.name));
 
@@ -99,10 +108,10 @@ export default function App() {
             {navItems.map((item) => <a key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined} className={`rounded-full px-4 py-2 text-xs font-medium transition hover:bg-white/[.08] hover:text-white ${pathname === item.href ? "bg-white/[.08] text-white" : "text-white/60"}`}>{item.label}</a>)}
           </nav>
           <a href="/contact" className="hidden items-center gap-2 rounded-full border border-white/15 bg-white/[.05] px-4 py-2.5 text-xs font-medium text-white/80 backdrop-blur-md transition hover:bg-white/10 md:inline-flex">Contact <MoveUpRight size={14} /></a>
-          <button type="button" onClick={() => setMenuOpen((v) => !v)} className="grid size-11 place-items-center rounded-full border border-white/15 bg-black/40 backdrop-blur-md md:hidden" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen}>{menuOpen ? <X size={18} /> : <Menu size={18} />}</button>
+          <button type="button" onClick={() => setMenuOpen((v) => !v)} className="grid size-11 place-items-center rounded-full border border-white/15 bg-black/40 backdrop-blur-md md:hidden" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} aria-controls="mobile-navigation">{menuOpen ? <X size={18} /> : <Menu size={18} />}</button>
         </div>
         {menuOpen && (
-          <motion.nav aria-label="Mobile navigation" initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="mx-4 rounded-2xl border border-white/10 bg-[#0b0b0b]/95 p-3 shadow-2xl backdrop-blur-xl md:hidden">
+          <motion.nav id="mobile-navigation" aria-label="Mobile navigation" initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="mx-4 rounded-2xl border border-white/10 bg-[#0b0b0b]/95 p-3 shadow-2xl backdrop-blur-xl md:hidden">
             {navItems.map((item) => <a key={item.href} href={item.href} onClick={closeMenu} aria-current={pathname === item.href ? "page" : undefined} className={`flex items-center justify-between rounded-xl px-4 py-3.5 text-sm transition hover:bg-white/[.06] hover:text-white ${pathname === item.href ? "bg-white/[.06] text-white" : "text-white/75"}`}>{item.label}<ArrowUpRight size={15} /></a>)}
           </motion.nav>
         )}
