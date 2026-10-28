@@ -4,6 +4,8 @@
 
 ## Demo must demonstrate
 - Premium responsive homepage
+- Separate Home, About, Services, Vehicles, and Contact routes
+- Lounge & Bar and Snooker prioritized in the hero and service hierarchy
 - Animated hero
 - Automatic hero image transitions
 - Animated headline/word transitions
