@@ -91,6 +91,7 @@ export default function App() {
 
   return (
     <div className="overflow-hidden bg-[#070707] text-white">
+      <a href="#main-content" className="sr-only z-[100] rounded-full bg-white px-4 py-3 text-sm font-medium text-black focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to content</a>
       <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "border-b border-white/10 bg-[#070707]/75 backdrop-blur-xl" : "bg-transparent"}`}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 transition-all duration-500 md:px-8 md:py-5">
           <a href="/" className="group flex items-center gap-2" aria-label="846 Autos home"><span className="text-xl font-black tracking-[-.08em]">846</span><span className="h-1.5 w-1.5 rounded-full bg-white/70 transition group-hover:scale-125" /></a>
@@ -112,7 +113,7 @@ export default function App() {
         />
       </header>
 
-      <main>
+      <main id="main-content">
         {pathname === "/" ? (
           <>
 
@@ -161,7 +162,7 @@ export default function App() {
         </Section>
 
         <Section id="contact" className="pt-8">
-          <SectionReveal><div className="overflow-hidden rounded-[2rem] bg-white p-8 text-black md:p-16"><div className="grid gap-12 md:grid-cols-[1.2fr_.8fr] md:items-end"><div><p className="text-xs font-semibold uppercase tracking-[.28em] text-black/40">Contact</p><h2 className="mt-5 max-w-4xl text-5xl font-medium leading-[.9] tracking-[-.06em] md:text-7xl">Ready when you are.</h2></div><div><p className="text-sm leading-6 text-black/55">Contact details will be connected once the owner confirms the official phone, WhatsApp, email and social channels.</p><Button variant="dark" className="mt-7">Contact 846 Autos <ArrowUpRight size={16} /></Button></div></div></div></SectionReveal>
+          <SectionReveal><div className="overflow-hidden rounded-[2rem] bg-white p-8 text-black md:p-16"><div className="grid gap-12 md:grid-cols-[1.2fr_.8fr] md:items-end"><div><p className="text-xs font-semibold uppercase tracking-[.28em] text-black/40">Contact</p><h2 className="mt-5 max-w-4xl text-5xl font-medium leading-[.9] tracking-[-.06em] md:text-7xl">Ready when you are.</h2></div><div><p className="text-sm leading-6 text-black/55">Contact details will be connected once the owner confirms the official phone, WhatsApp, email and social channels.</p><Button variant="dark" className="mt-7" onClick={() => { window.location.href = "/contact"; }}>Contact 846 Autos <ArrowUpRight size={16} /></Button></div></div></div></SectionReveal>
         </Section>
 
           </>
