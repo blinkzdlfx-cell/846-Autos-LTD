@@ -123,7 +123,7 @@ export default function App() {
             <div className="max-w-6xl">
               <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}>
                 <div className="mb-7 flex flex-wrap items-center gap-3 text-[10px] font-semibold uppercase tracking-[.28em] text-white/55 md:text-xs">
-                  <span className="rounded-full border border-white/15 bg-black/25 px-3 py-1.5 backdrop-blur-md">846 Autos Limited</span><span className="text-white/30">Working demo</span>
+                  <span className="rounded-full border border-white/15 bg-black/25 px-3 py-1.5 backdrop-blur-md">846 Autos Limited</span><span className="text-white/30">Lounge & entertainment</span>
                 </div>
                 <h1 className="max-w-6xl text-[clamp(3.4rem,9.2vw,9rem)] font-semibold leading-[.86] tracking-[-.075em]">Stay for<br />the whole<br className="sm:hidden" /> <AnimatedText words={["experience.", "lounge.", "snooker.", "good times."]} /></h1>
                 <p className="mt-8 max-w-xl text-sm leading-6 text-white/60 md:text-base">Lounge & Bar, snooker and vehicle care lead the 846 experience—with vehicle sales and clearing & forwarding alongside.</p>
@@ -179,7 +179,7 @@ export default function App() {
         )}
       </main>
 
-      <footer className="border-t border-white/10 px-5 py-8 md:px-8"><div className="mx-auto flex max-w-7xl flex-col gap-5 text-xs text-white/35 md:flex-row md:items-center md:justify-between"><div className="flex items-center gap-2 text-white/60"><span className="font-black tracking-[-.06em]">846</span><span>Autos Limited</span></div><div className="flex flex-wrap gap-x-5 gap-y-2"><span>Demo foundation</span><span>© 2026</span><span>Verified content pending</span></div></div></footer>
+      <footer className="border-t border-white/10 px-5 py-8 md:px-8"><div className="mx-auto flex max-w-7xl flex-col gap-5 text-xs text-white/35 md:flex-row md:items-center md:justify-between"><div className="flex items-center gap-2 text-white/60"><span className="font-black tracking-[-.06em]">846</span><span>Autos Limited</span></div><div className="flex flex-wrap gap-x-5 gap-y-2"><span>Lounge • Snooker • Automotive</span><span>© 2026</span><span>Verified content pending</span></div></div></footer>
     </div>
   );
 }
