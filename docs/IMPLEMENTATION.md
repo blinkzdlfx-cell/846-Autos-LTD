@@ -28,5 +28,5 @@ Treat repository documentation as the current source of truth, while recognizing
 ## Verification
 - Install dependencies with `npm install --no-audit --no-fund`.
 - Run `npm run build` and resolve all build errors before deploying.
-- GitHub Actions checks pull requests targeting `main` and pushes to `main`; feature branches are verified through their pull request to avoid duplicate push and pull-request runs.
+- GitHub Actions runs one production build on each branch push, avoiding duplicate push and pull-request runs.
 - Manual browser checks remain required for direct route refreshes, mobile navigation, keyboard access, image loading, and all CTAs.
