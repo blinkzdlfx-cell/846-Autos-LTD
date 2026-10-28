@@ -6,6 +6,11 @@ import { Button } from "./components/ui/button";
 import { HeroCarousel } from "./components/HeroCarousel";
 import { SectionReveal } from "./components/SectionReveal";
 import { heroSlides, navItems, services } from "./data/site";
+import { AboutPage } from "./pages/AboutPage";
+import { ServicesPage } from "./pages/ServicesPage";
+import { VehiclesPage } from "./pages/VehiclesPage";
+import { ContactPage } from "./pages/ContactPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 
 function Section({ children, className = "", id }) {
   return <section id={id} className={`mx-auto w-full max-w-7xl px-5 py-24 md:px-8 md:py-32 ${className}`}>{children}</section>;
@@ -45,6 +50,7 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const pathname = window.location.pathname.replace(/\/+$/, "") || "/";
   const closeMenu = () => setMenuOpen(false);
   const experienceServices = services.filter((service) => ["Lounge & Bar", "Snooker"].includes(service.name));
 
@@ -52,11 +58,11 @@ export default function App() {
     <div className="overflow-hidden bg-[#070707] text-white">
       <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "border-b border-white/10 bg-[#070707]/75 backdrop-blur-xl" : "bg-transparent"}`}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 transition-all duration-500 md:px-8 md:py-5">
-          <a href="#" className="group flex items-center gap-2" aria-label="846 Autos home"><span className="text-xl font-black tracking-[-.08em]">846</span><span className="h-1.5 w-1.5 rounded-full bg-white/70 transition group-hover:scale-125" /></a>
+          <a href="/" className="group flex items-center gap-2" aria-label="846 Autos home"><span className="text-xl font-black tracking-[-.08em]">846</span><span className="h-1.5 w-1.5 rounded-full bg-white/70 transition group-hover:scale-125" /></a>
           <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-black/30 p-1.5 backdrop-blur-xl md:flex">
             {navItems.map((item) => <a key={item.href} href={item.href} className="rounded-full px-4 py-2 text-xs font-medium text-white/60 transition hover:bg-white/[.08] hover:text-white">{item.label}</a>)}
           </nav>
-          <a href="#contact" className="hidden items-center gap-2 rounded-full border border-white/15 bg-white/[.05] px-4 py-2.5 text-xs font-medium text-white/80 backdrop-blur-md transition hover:bg-white/10 md:inline-flex">Contact <MoveUpRight size={14} /></a>
+          <a href="/contact" className="hidden items-center gap-2 rounded-full border border-white/15 bg-white/[.05] px-4 py-2.5 text-xs font-medium text-white/80 backdrop-blur-md transition hover:bg-white/10 md:inline-flex">Contact <MoveUpRight size={14} /></a>
           <button type="button" onClick={() => setMenuOpen((v) => !v)} className="grid size-11 place-items-center rounded-full border border-white/15 bg-black/40 backdrop-blur-md md:hidden" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen}>{menuOpen ? <X size={18} /> : <Menu size={18} />}</button>
         </div>
         {menuOpen && (
@@ -72,6 +78,9 @@ export default function App() {
       </header>
 
       <main>
+        {pathname === "/" ? (
+          <>
+
         <section className="relative flex min-h-[94svh] items-end overflow-hidden border-b border-white/10">
           <HeroCarousel slides={heroSlides} />
           <Section className="relative z-10 pb-16 pt-40 md:pb-24">
@@ -119,6 +128,19 @@ export default function App() {
         <Section id="contact" className="pt-8">
           <SectionReveal><div className="overflow-hidden rounded-[2rem] bg-white p-8 text-black md:p-16"><div className="grid gap-12 md:grid-cols-[1.2fr_.8fr] md:items-end"><div><p className="text-xs font-semibold uppercase tracking-[.28em] text-black/40">Contact</p><h2 className="mt-5 max-w-4xl text-5xl font-medium leading-[.9] tracking-[-.06em] md:text-7xl">Ready when you are.</h2></div><div><p className="text-sm leading-6 text-black/55">Contact details will be connected once the owner confirms the official phone, WhatsApp, email and social channels.</p><Button variant="dark" className="mt-7">Contact 846 Autos <ArrowUpRight size={16} /></Button></div></div></div></SectionReveal>
         </Section>
+
+          </>
+        ) : pathname === "/about" ? (
+          <AboutPage />
+        ) : pathname === "/services" ? (
+          <ServicesPage />
+        ) : pathname === "/vehicles" ? (
+          <VehiclesPage />
+        ) : pathname === "/contact" ? (
+          <ContactPage />
+        ) : (
+          <NotFoundPage />
+        )}
       </main>
 
       <footer className="border-t border-white/10 px-5 py-8 md:px-8"><div className="mx-auto flex max-w-7xl flex-col gap-5 text-xs text-white/35 md:flex-row md:items-center md:justify-between"><div className="flex items-center gap-2 text-white/60"><span className="font-black tracking-[-.06em]">846</span><span>Autos Limited</span></div><div className="flex flex-wrap gap-x-5 gap-y-2"><span>Demo foundation</span><span>© 2026</span><span>Verified content pending</span></div></div></footer>

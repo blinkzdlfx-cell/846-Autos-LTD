@@ -15,8 +15,9 @@ export const services = [
 ];
 
 export const navItems = [
-  { label: "Experience", href: "#experience" },
-  { label: "Services", href: "#services" },
-  { label: "Vehicles", href: "#vehicles" },
-  { label: "Contact", href: "#contact" }
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Vehicles", href: "/vehicles" },
+  { label: "Contact", href: "/contact" }
 ];
