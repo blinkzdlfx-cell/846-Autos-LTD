@@ -15,7 +15,7 @@ export function ServicesPage() {
           {services.map((service, index) => (
             <SectionReveal key={service.name}>
               <article className={`group relative min-h-[380px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[.03] md:min-h-[460px] ${index < 2 ? "md:min-h-[520px]" : ""}`}>
-                <img src={service.image} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-55 transition duration-700 group-hover:scale-105 group-hover:opacity-75" />
+                <img src={service.image} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-55 transition duration-700 group-hover:scale-105 group-hover:opacity-75" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/5" />
                 <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
                   <p className="text-xs uppercase tracking-[.24em] text-white/45">0{index + 1} / Service</p>
