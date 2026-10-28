@@ -19,7 +19,7 @@ function Section({ children, className = "", id }) {
 function ServiceCard({ service, index }) {
   return (
     <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.65, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }} className="group relative min-h-[410px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[.035] md:min-h-[470px]">
-      <img src={service.image} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-60 transition duration-1000 ease-out group-hover:scale-105 group-hover:opacity-75" />
+      <img src={service.image} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-60 transition duration-1000 ease-out group-hover:scale-105 group-hover:opacity-75" />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/5" />
       <div className="relative z-10 flex h-full flex-col p-7 md:p-8">
         <div className="flex items-start justify-between text-xs uppercase tracking-[.24em] text-white/50"><span>{service.number}</span><span>846</span></div>
@@ -153,7 +153,7 @@ export default function App() {
           <SectionReveal><div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[.035]"><div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(255,255,255,.12),transparent_30%),radial-gradient(circle_at_85%_75%,rgba(255,255,255,.08),transparent_25%)]" /><div className="relative grid min-h-[520px] gap-10 p-8 md:grid-cols-2 md:p-14"><div className="flex flex-col"><p className="text-xs font-semibold uppercase tracking-[.28em] text-white/35">Beyond the road</p><h2 className="mt-auto max-w-xl text-5xl font-medium leading-[.92] tracking-[-.06em] md:text-7xl">Lounge first. Game on.</h2></div><div className="flex flex-col justify-end"><p className="max-w-lg text-lg leading-8 text-white/55">Make time for the lounge and bar, then bring the competition to the snooker table. These entertainment spaces sit at the heart of the 846 experience, with automotive services alongside.</p><div className="mt-8 grid grid-cols-2 gap-3">
                     {experienceServices.map((service) => (
                       <div key={service.name} className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-black/20">
-                        <img src={service.image} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-55 transition duration-700 group-hover:scale-105 group-hover:opacity-75" />
+                        <img src={service.image} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-55 transition duration-700 group-hover:scale-105 group-hover:opacity-75" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                         <span className="absolute inset-x-3 bottom-3 text-xs font-medium text-white/80">{service.name.replace(" & Bar", "")}</span>
                       </div>
