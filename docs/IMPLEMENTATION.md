@@ -25,3 +25,8 @@ Do not begin with a large amount of generated code. Establish the foundation and
 
 ## Agent rule
 Treat repository documentation as the current source of truth, while recognizing that it is a living draft. New decisions should be discussed and reflected in documentation before becoming implementation assumptions.
+## Verification
+- Install dependencies with `npm install --no-audit --no-fund`.
+- Run `npm run build` and resolve all build errors before deploying.
+- GitHub Actions checks pull requests targeting `main` and pushes to `main`; feature branches are verified through their pull request to avoid duplicate push and pull-request runs.
+- Manual browser checks remain required for direct route refreshes, mobile navigation, keyboard access, image loading, and all CTAs.
