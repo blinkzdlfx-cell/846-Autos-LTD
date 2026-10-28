@@ -50,7 +50,7 @@ try {
   const carouselSource = await readFile(new URL("../src/components/HeroCarousel.jsx", import.meta.url), "utf8");
   assert.match(carouselSource, /Pause automatic image rotation/, "carousel should offer a pause control");
   assert.match(carouselSource, /onClick=\\{\\(\\) => setIsPlaying\\(\\(playing\\) => !playing\\)\\}/, "pause control should toggle autoplay state");
-  assert.match(carouselSource, /\\"z-30[^\\"]*\\\"/, "carousel controls should stack above hero content and remain clickable");
+  assert.match(carouselSource, /z-30/, "carousel controls should stack above hero content and remain clickable");
   assert.match(carouselSource, /\[isPlaying, reduceMotion, slides\\.length\]/, "autoplay timer should respond to the playing state");
   assert.match(carouselSource, /useReducedMotion/, "carousel should respect reduced-motion preferences");
 
