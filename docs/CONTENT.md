@@ -11,7 +11,7 @@ Only use verified company information. Do not fabricate company history, years o
 Name, logo, short description, about copy, contact details, address, opening hours, social links.
 
 ### Services
-Each service may eventually have a name, short description, image, longer description, CTA, and service-specific details. Current categories: Vehicle Sales, Clearing & Forwarding, Car Wash, Lounge/Bar, Snooker, and other services pending confirmation.
+Each service may eventually have a name, short description, image, longer description, CTA, and service-specific details. Current categories: Lounge & Bar, Snooker, Car Wash, Vehicle Sales, and Clearing & Forwarding. Lounge & Bar and Snooker should lead the visual hierarchy. Additional services remain pending owner confirmation.
 
 ### Vehicles
 Use structured local data rather than embedding vehicle details throughout components. Potential fields: id, images, make, model, year, condition, transmission, fuel, mileage, price, location, description. Only populate verified fields.
@@ -20,4 +20,4 @@ Use structured local data rather than embedding vehicle details throughout compo
 Potential categories: Vehicles, Car Wash, Lounge, Snooker, Facilities, Other. Categories remain subject to change.
 
 ## Placeholder policy
-If real assets are unavailable, use intentional demo placeholders rather than fake company claims. Replace placeholders with owner-provided or verified material before presenting the demo as factual.
+If real assets are unavailable, use intentional demo placeholders rather than fake company claims. The final content stage must collect the official phone/WhatsApp number, address, email, logo, actual vehicle details, and owner-approved photographs. Replace placeholders with owner-provided or verified material before presenting the demo as factual.

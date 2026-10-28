@@ -37,6 +37,8 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const pathname = window.location.pathname.replace(/\/+$/, "") || "/";
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +52,40 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const pathname = window.location.pathname.replace(/\/+$/, "") || "/";
+  useEffect(() => {
+    const pageMetadata = {
+      "/": {
+        title: "846 Autos Limited | Lounge, Snooker & Automotive Services",
+        description: "Explore 846 Autos Limited's lounge and bar, snooker, car wash, vehicle sales, and clearing and forwarding services."
+      },
+      "/about": {
+        title: "About 846 Autos Limited",
+        description: "Learn about 846 Autos Limited's combined lounge, bar, snooker, and automotive service offering."
+      },
+      "/services": {
+        title: "Services | 846 Autos Limited",
+        description: "Explore the lounge and bar, snooker, car wash, vehicle sales, and clearing and forwarding services presented by 846 Autos."
+      },
+      "/vehicles": {
+        title: "Vehicle Sales | 846 Autos Limited",
+        description: "Vehicle listings will be published after available stock, specifications, and photographs are confirmed by 846 Autos."
+      },
+      "/contact": {
+        title: "Contact | 846 Autos Limited",
+        description: "Official contact channels for 846 Autos Limited will be published after owner confirmation."
+      }
+    };
+    const metadata = pageMetadata[pathname] || {
+      title: "Page not found | 846 Autos Limited",
+      description: "The requested page could not be found on the 846 Autos Limited website."
+    };
+
+    document.title = metadata.title;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", metadata.description);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", metadata.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", metadata.description);
+  }, [pathname]);
+
   const closeMenu = () => setMenuOpen(false);
   const experienceServices = services.filter((service) => ["Lounge & Bar", "Snooker"].includes(service.name));
 
@@ -60,14 +95,14 @@ export default function App() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 transition-all duration-500 md:px-8 md:py-5">
           <a href="/" className="group flex items-center gap-2" aria-label="846 Autos home"><span className="text-xl font-black tracking-[-.08em]">846</span><span className="h-1.5 w-1.5 rounded-full bg-white/70 transition group-hover:scale-125" /></a>
           <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-black/30 p-1.5 backdrop-blur-xl md:flex">
-            {navItems.map((item) => <a key={item.href} href={item.href} className="rounded-full px-4 py-2 text-xs font-medium text-white/60 transition hover:bg-white/[.08] hover:text-white">{item.label}</a>)}
+            {navItems.map((item) => <a key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined} className={`rounded-full px-4 py-2 text-xs font-medium transition hover:bg-white/[.08] hover:text-white ${pathname === item.href ? "bg-white/[.08] text-white" : "text-white/60"}`}>{item.label}</a>)}
           </nav>
           <a href="/contact" className="hidden items-center gap-2 rounded-full border border-white/15 bg-white/[.05] px-4 py-2.5 text-xs font-medium text-white/80 backdrop-blur-md transition hover:bg-white/10 md:inline-flex">Contact <MoveUpRight size={14} /></a>
           <button type="button" onClick={() => setMenuOpen((v) => !v)} className="grid size-11 place-items-center rounded-full border border-white/15 bg-black/40 backdrop-blur-md md:hidden" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen}>{menuOpen ? <X size={18} /> : <Menu size={18} />}</button>
         </div>
         {menuOpen && (
           <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="mx-4 rounded-2xl border border-white/10 bg-[#0b0b0b]/95 p-3 shadow-2xl backdrop-blur-xl md:hidden">
-            {navItems.map((item) => <a key={item.href} href={item.href} onClick={closeMenu} className="flex items-center justify-between rounded-xl px-4 py-3.5 text-sm text-white/75 transition hover:bg-white/[.06] hover:text-white">{item.label}<ArrowUpRight size={15} /></a>)}
+            {navItems.map((item) => <a key={item.href} href={item.href} onClick={closeMenu} aria-current={pathname === item.href ? "page" : undefined} className={`flex items-center justify-between rounded-xl px-4 py-3.5 text-sm transition hover:bg-white/[.06] hover:text-white ${pathname === item.href ? "bg-white/[.06] text-white" : "text-white/75"}`}>{item.label}<ArrowUpRight size={15} /></a>)}
           </motion.nav>
         )}
         <div

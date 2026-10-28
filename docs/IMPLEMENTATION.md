@@ -12,13 +12,13 @@ Initialize React/Vite; configure Tailwind and shadcn/ui; add Motion and Lucide; 
 Navigation, hero, animated text, image transitions, introduction, services preview, vehicle preview, lifestyle/service sections, gallery preview, contact CTA, footer.
 
 ## Phase 3 — Supporting experience
-Services, vehicle showcase, gallery, about, and contact. Whether these become separate routes or homepage sections remains open.
+Separate routes are now established for Home, About, Services, Vehicles, and Contact. The homepage and Services page prioritize Lounge & Bar and Snooker; the homepage also previews vehicle sales, car wash, and clearing & forwarding.
 
 ## Phase 4 — Polish
 Mobile refinement, animation refinement, accessibility, performance, image optimization, SEO metadata, empty/error states, and cross-browser checks.
 
 ## Phase 5 — Deployment
-Target: Cloudflare Pages. No backend infrastructure is required for the initial demo.
+Target: Cloudflare Workers Static Assets, configured in `wrangler.jsonc` with `dist` output and SPA fallback for direct route refreshes. No backend infrastructure is required for the initial demo.
 
 ## Implementation rule
 Do not begin with a large amount of generated code. Establish the foundation and visual system first, then implement incrementally.
