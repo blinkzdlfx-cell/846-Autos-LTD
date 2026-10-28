@@ -80,10 +80,10 @@ export default function App() {
                 <div className="mb-7 flex flex-wrap items-center gap-3 text-[10px] font-semibold uppercase tracking-[.28em] text-white/55 md:text-xs">
                   <span className="rounded-full border border-white/15 bg-black/25 px-3 py-1.5 backdrop-blur-md">846 Autos Limited</span><span className="text-white/30">Working demo</span>
                 </div>
-                <h1 className="max-w-6xl text-[clamp(3.4rem,9.2vw,9rem)] font-semibold leading-[.86] tracking-[-.075em]">More than<br /><span className="inline-block">just</span> <br className="sm:hidden" /><AnimatedText words={["automotive.", "mobility.", "lifestyle.", "experience."]} /></h1>
-                <p className="mt-8 max-w-xl text-sm leading-6 text-white/60 md:text-base">A premium digital front door for a business that brings vehicles, movement, care and leisure together.</p>
+                <h1 className="max-w-6xl text-[clamp(3.4rem,9.2vw,9rem)] font-semibold leading-[.86] tracking-[-.075em]">Stay for<br />the whole<br className="sm:hidden" /> <AnimatedText words={["experience.", "lounge.", "snooker.", "good times."]} /></h1>
+                <p className="mt-8 max-w-xl text-sm leading-6 text-white/60 md:text-base">Lounge & Bar, snooker and vehicle care lead the 846 experience—with vehicle sales and clearing & forwarding alongside.</p>
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                  <Button onClick={() => document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })}>Explore 846 <ArrowDown size={16} /></Button>
+                  <Button onClick={() => document.querySelector("#experience")?.scrollIntoView({ behavior: "smooth" })}>Explore the experience <ArrowDown size={16} /></Button>
                   <Button variant="outline" onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}>Start a conversation <ArrowUpRight size={16} /></Button>
                 </div>
               </motion.div>
@@ -92,16 +92,7 @@ export default function App() {
         </section>
 
         <Section className="border-b border-white/10">
-          <SectionReveal><div className="grid gap-10 md:grid-cols-[.65fr_1.35fr] md:items-end"><p className="text-xs font-semibold uppercase tracking-[.28em] text-white/35">The 846 approach</p><div><h2 className="max-w-5xl text-4xl font-medium leading-[.98] tracking-[-.055em] md:text-6xl lg:text-7xl">One destination for movement, care, connection and good times.</h2><p className="mt-7 max-w-2xl text-sm leading-6 text-white/50 md:text-base">The site is intentionally structured as a flexible foundation. Verified business details, vehicles and contact channels can be connected as the demo moves toward production.</p></div></div></SectionReveal>
-        </Section>
-
-        <Section id="services">
-          <SectionReveal><div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p className="text-xs font-semibold uppercase tracking-[.28em] text-white/35">What we do</p><h2 className="mt-3 text-5xl font-medium tracking-[-.055em] md:text-7xl">Our services.</h2></div><p className="max-w-sm text-sm leading-6 text-white/45">A modular presentation that can later become individual service pages or dashboard-managed content.</p></div></SectionReveal>
-          <div className="grid gap-4 md:grid-cols-2">{services.map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}</div>
-        </Section>
-
-        <Section id="vehicles" className="border-y border-white/10">
-          <SectionReveal><div className="grid gap-12 md:grid-cols-[.85fr_1.15fr] md:items-end"><div><p className="text-xs font-semibold uppercase tracking-[.28em] text-white/35">Vehicles</p><h2 className="mt-5 text-5xl font-medium leading-[.92] tracking-[-.06em] md:text-7xl">Drive something worth remembering.</h2></div><div className="md:pb-2"><div className="rounded-3xl border border-white/10 bg-white/[.03] p-6 md:p-8"><p className="text-xs uppercase tracking-[.24em] text-white/35">Inventory module</p><p className="mt-4 text-lg leading-7 text-white/65">Vehicle listings are intentionally not fabricated in this demo. Verified inventory can be connected here later with photos, specifications, availability and enquiry actions.</p><span className="mt-6 inline-flex items-center rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/45">Ready for real inventory</span></div></div></div></SectionReveal>
+          <SectionReveal><div className="grid gap-10 md:grid-cols-[.65fr_1.35fr] md:items-end"><p className="text-xs font-semibold uppercase tracking-[.28em] text-white/35">The 846 approach</p><div><h2 className="max-w-5xl text-4xl font-medium leading-[.98] tracking-[-.055em] md:text-6xl lg:text-7xl">The lounge sets the mood. Snooker keeps the game going.</h2><p className="mt-7 max-w-2xl text-sm leading-6 text-white/50 md:text-base">846 brings its lounge and entertainment offering to the forefront, with car wash, vehicle sales and clearing & forwarding presented as part of the wider business.</p></div></div></SectionReveal>
         </Section>
 
         <Section id="experience">
@@ -114,6 +105,15 @@ export default function App() {
                       </div>
                     ))}
                   </div></div></div></div></SectionReveal>
+        </Section>
+
+        <Section id="services">
+          <SectionReveal><div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p className="text-xs font-semibold uppercase tracking-[.28em] text-white/35">What we do</p><h2 className="mt-3 text-5xl font-medium tracking-[-.055em] md:text-7xl">Our services.</h2></div><p className="max-w-sm text-sm leading-6 text-white/45">A modular presentation that can later become individual service pages or dashboard-managed content.</p></div></SectionReveal>
+          <div className="grid gap-4 md:grid-cols-2">{services.map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}</div>
+        </Section>
+
+        <Section id="vehicles" className="border-y border-white/10">
+          <SectionReveal><div className="grid gap-12 md:grid-cols-[.85fr_1.15fr] md:items-end"><div><p className="text-xs font-semibold uppercase tracking-[.28em] text-white/35">Vehicles</p><h2 className="mt-5 text-5xl font-medium leading-[.92] tracking-[-.06em] md:text-7xl">Drive something worth remembering.</h2></div><div className="md:pb-2"><div className="rounded-3xl border border-white/10 bg-white/[.03] p-6 md:p-8"><p className="text-xs uppercase tracking-[.24em] text-white/35">Inventory module</p><p className="mt-4 text-lg leading-7 text-white/65">Vehicle listings are intentionally not fabricated in this demo. Verified inventory can be connected here later with photos, specifications, availability and enquiry actions.</p><span className="mt-6 inline-flex items-center rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/45">Ready for real inventory</span></div></div></div></SectionReveal>
         </Section>
 
         <Section id="contact" className="pt-8">
