@@ -76,12 +76,12 @@ export function HeroCarousel({ slides }) {
         />
       </AnimatePresence>
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_15%,rgba(255,255,255,.2),transparent_28%),linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.15)_35%,#070707_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_15%,rgba(255,255,255,.2),transparent_28%),linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.15)_35%,#070707_100%)] pointer-events-none" />
 
       <button
         type="button"
         onClick={previous}
-        className="absolute left-5 top-1/2 z-10 grid size-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-black/30 text-white backdrop-blur-md transition hover:bg-white/10 md:left-8"
+        className="absolute left-5 top-1/2 z-30 grid size-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-black/30 text-white backdrop-blur-md transition hover:bg-white/10 md:left-8"
         aria-label="Previous hero image"
       >
         <ChevronLeft size={19} />
@@ -90,13 +90,13 @@ export function HeroCarousel({ slides }) {
       <button
         type="button"
         onClick={next}
-        className="absolute right-5 top-1/2 z-10 grid size-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-black/30 text-white backdrop-blur-md transition hover:bg-white/10 md:right-8"
+        className="absolute right-5 top-1/2 z-30 grid size-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-black/30 text-white backdrop-blur-md transition hover:bg-white/10 md:right-8"
         aria-label="Next hero image"
       >
         <ChevronRight size={19} />
       </button>
 
-      <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-white/10 bg-black/25 px-3 py-2 backdrop-blur-md">
+      <div className="pointer-events-auto absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-white/10 bg-black/25 px-3 py-2 backdrop-blur-md">
         {slides.map((slide, index) => (
           <button
             key={slide.src}

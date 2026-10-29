@@ -49,13 +49,16 @@ try {
 
   const carouselSource = await readFile(new URL("../src/components/HeroCarousel.jsx", import.meta.url), "utf8");
   assert.match(carouselSource, /Pause automatic image rotation/, "carousel should offer a pause control");
+  assert.match(carouselSource, /onClick=\{\(\) => setIsPlaying\(\(playing\) => !playing\)\}/, "pause control should toggle autoplay state");
+  assert.match(carouselSource, /z-30/, "carousel controls should stack above hero content and remain clickable");
+  assert.match(carouselSource, /\[isPlaying, reduceMotion, slides\.length\]/, "autoplay timer should respond to the playing state");
   assert.match(carouselSource, /useReducedMotion/, "carousel should respect reduced-motion preferences");
 
   const wrangler = JSON.parse(await readFile(new URL("../wrangler.jsonc", import.meta.url), "utf8").then((value) => value.replace(/\/\/.*$/gm, "")));
   assert.equal(wrangler.assets?.directory, "./dist", "Cloudflare should serve the Vite dist directory");
   assert.equal(wrangler.assets?.not_found_handling, "single-page-application", "Cloudflare should enable SPA fallback");
 
-  console.log("Smoke checks passed: production bundle, direct route fallback, mobile keyboard access, carousel controls, and Cloudflare SPA configuration.");
+  console.log("Smoke checks passed: production bundle, direct route fallback, mobile keyboard access, clickable carousel controls, and Cloudflare SPA configuration.");
 } finally {
   server.kill("SIGTERM");
 }
