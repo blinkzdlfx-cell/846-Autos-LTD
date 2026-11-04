@@ -99,7 +99,7 @@ export default function App() {
       '/services': {
         title: 'Services | 846 Autos Limited',
         description:
-          'Explore the lounge and bar, snooker, car wash, vehicle sales, and clearing and forwarding services presented by 846 Autos.',
+          'Explore the lounge, bar, DJ entertainment, drinks, snooker, car wash, vehicle sales, and clearing and forwarding services presented by 846 Autos.',
       },
       '/vehicles': {
         title: 'Vehicle Sales | 846 Autos Limited',
@@ -150,6 +150,7 @@ export default function App() {
       name: '846 Autos Limited',
       url: window.location.origin,
       telephone: '09075505454',
+      email: 'enquiries@846autos.com',
       address: {
         '@type': 'PostalAddress',
         addressCountry: 'NG',
