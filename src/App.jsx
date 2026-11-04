@@ -340,27 +340,15 @@ export default function App() {
                     </div>
                     <div className="flex flex-col justify-end">
                       <p className="max-w-lg text-lg leading-8 text-white/55">
-                        Make time for the lounge and bar, then bring the competition to the snooker
-                        table. These entertainment spaces sit at the heart of the 846 experience,
-                        with automotive services alongside.
+                        Enjoy the lounge and bar, DJ entertainment, drinks and a game of snooker. These social experiences sit at the heart of 846, with car wash, vehicle sales and clearing and forwarding services available alongside.
                       </p>
                       <div className="mt-8 grid grid-cols-2 gap-3">
-                        {experienceServices.map(service => (
-                          <div
-                            key={service.name}
-                            className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-black/20"
-                          >
-                            <img
-                              src={service.image}
-                              alt=""
-                              loading="lazy"
-                              decoding="async"
-                              className="absolute inset-0 h-full w-full object-cover opacity-55 transition duration-700 group-hover:scale-105 group-hover:opacity-75"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-                            <span className="absolute inset-x-3 bottom-3 text-xs font-medium text-white/80">
-                              {service.name.replace(' & Bar', '')}
-                            </span>
+                        {experienceServices.map((service, index) => (
+                          <div key={service.name} className="group relative flex min-h-32 flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#151515] p-4">
+                            <div className="pointer-events-none absolute -right-7 -top-8 size-28 rounded-full border border-white/10 transition duration-700 group-hover:scale-125" />
+                            <div className="pointer-events-none absolute -right-1 -top-2 size-16 rounded-full border border-white/10" />
+                            <span className="relative text-[10px] uppercase tracking-[.2em] text-white/35">0{index + 1} / 846</span>
+                            <div className="relative mt-5"><h3 className="text-sm font-medium text-white/90">{service.name}</h3><p className="mt-1 text-[10px] leading-4 text-white/40">{service.eyebrow}</p></div>
                           </div>
                         ))}
                       </div>
@@ -382,8 +370,7 @@ export default function App() {
                     </h2>
                   </div>
                   <p className="max-w-sm text-sm leading-6 text-white/45">
-                    A modular presentation that can later become individual service pages or
-                    dashboard-managed content.
+                    Explore the lounge and bar, DJ entertainment, drinks, snooker and the automotive services available through 846 Autos.
                   </p>
                 </div>
               </SectionReveal>
@@ -408,15 +395,13 @@ export default function App() {
                   <div className="md:pb-2">
                     <div className="rounded-3xl border border-white/10 bg-white/[.03] p-6 md:p-8">
                       <p className="text-xs uppercase tracking-[.24em] text-white/35">
-                        Inventory module
+                        Vehicle enquiries
                       </p>
                       <p className="mt-4 text-lg leading-7 text-white/65">
-                        Vehicle listings are intentionally not fabricated in this demo. Verified
-                        inventory can be connected here later with photos, specifications,
-                        availability and enquiry actions.
+                        Ask the 846 Autos team about vehicles currently available for sale. You can request confirmed specifications, condition, pricing and viewing arrangements before making a decision.
                       </p>
                       <span className="mt-6 inline-flex items-center rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/45">
-                        Ready for real inventory
+                        Ask about available vehicles
                       </span>
                     </div>
                   </div>
@@ -438,8 +423,7 @@ export default function App() {
                     </div>
                     <div>
                       <p className="text-sm leading-6 text-black/55">
-                        Contact details will be connected once the owner confirms the official
-                        phone, WhatsApp, email and social channels.
+                        For bookings, service enquiries and general information, contact the 846 Autos team by phone, WhatsApp or email. Share what you need and the team can direct your enquiry.
                       </p>
                       <Button
                         variant="dark"
