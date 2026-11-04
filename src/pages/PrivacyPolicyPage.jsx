@@ -33,16 +33,17 @@ export function PrivacyPolicyPage() {
             </p>
             <ul className="space-y-3 list-disc pl-6">
               <li>
-                <strong>Personal information:</strong> name, phone number, WhatsApp number, and
-                email address when you call, message, or submit our contact form.
+                <strong>Personal information:</strong> name, phone number, WhatsApp number and email address when you choose to contact us by phone,
+                email or WhatsApp. The website enquiry form prepares a message in the email or WhatsApp
+                app you choose; it does not submit or store the form contents on this website.
               </li>
               <li>
                 <strong>Enquiry details:</strong> information about the service you are interested
                 in (vehicle sales, car wash, lounge & bar, DJ entertainment, drinks, snooker, or clearing & forwarding).
               </li>
               <li>
-                <strong>Usage data:</strong> anonymised information about how you navigate our
-                website, including pages visited and device type.
+                <strong>Technical data:</strong> limited technical information may be processed by our hosting
+                provider to deliver, maintain and protect the website.
               </li>
             </ul>
           </SectionReveal>
