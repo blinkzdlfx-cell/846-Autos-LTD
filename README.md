@@ -30,4 +30,4 @@ Business facts, inventory, prices, testimonials, contact channels and other oper
 
 ## Deployment
 
-See docs/DEPLOYMENT.md. Cloudflare Pages uses npm run build and dist for this React/Vite project.
+See docs/DEPLOYMENT.md. Cloudflare Workers uses npm run build and dist for this React/Vite project.
