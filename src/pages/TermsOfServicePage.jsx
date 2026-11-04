@@ -63,8 +63,8 @@ export function TermsOfServicePage() {
               3. Services offered
             </h2>
             <p className="mb-4">
-              846 Autos Limited presents information about vehicle sales, car wash, lounge & bar,
-              snooker, and clearing & forwarding services. All service descriptions, pricing, and
+              846 Autos Limited presents information about its lounge and bar, DJ entertainment, drinks, snooker,
+              car wash, vehicle sales, and clearing & forwarding services. All service descriptions, pricing, and
               availability are subject to confirmation. We reserve the right to modify or
               discontinue any service at any time without notice.
             </p>
@@ -75,8 +75,8 @@ export function TermsOfServicePage() {
               4. Vehicle listings and inventory
             </h2>
             <p className="mb-4">
-              Any vehicle information displayed on this website is for illustrative purposes only
-              unless expressly confirmed as available stock. Prices, specifications, and
+              Vehicle information and imagery on this website may be illustrative. Current stock, vehicle condition,
+              specifications, pricing and availability must be confirmed directly with 846 Autos before purchase. Prices, specifications, and
               availability are subject to change without notice. Please contact us directly to
               confirm current inventory before making any purchase decision.
             </p>
