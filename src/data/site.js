@@ -1,64 +1,21 @@
 export const heroSlides = [
-  {
-    src: 'https://images.unsplash.com/photo-1777115213841-7ea7647f8dc1?auto=format&fit=crop&w=2200&q=88',
-    alt: 'Lounge and bar interior',
-  },
-  {
-    src: 'https://images.pexels.com/photos/18561840/pexels-photo-18561840/free-photo-of-man-playing-billiard.jpeg?auto=compress&dpr=1&w=2200',
-    alt: 'Snooker and billiards entertainment',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2200&q=88',
-    alt: 'Premium car on a road',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=88',
-    alt: 'Performance car in a dark setting',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2200&q=88',
-    alt: 'Modern vehicle in an urban environment',
-  },
+  { src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2200&q=88', alt: 'Warm, contemporary lounge and bar interior' },
+  { src: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=2200&q=88', alt: 'DJ performance and music atmosphere' },
+  { src: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=2200&q=88', alt: 'Drinks prepared for a social evening' },
+  { src: 'https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?auto=format&fit=crop&w=2200&q=88', alt: 'Snooker and billiards table' },
+  { src: 'https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=2200&q=88', alt: 'Professional vehicle wash' },
+  { src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=88', alt: 'Premium vehicle exterior' },
+  { src: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=2200&q=88', alt: 'Logistics and freight handling' },
 ];
 
 export const services = [
-  {
-    number: '01',
-    name: 'Lounge & Bar',
-    description: 'Make time to unwind, meet up and enjoy the lounge and bar experience at 846.',
-    image:
-      'https://images.unsplash.com/photo-1777115213841-7ea7647f8dc1?auto=format&fit=crop&w=1400&q=85',
-  },
-  {
-    number: '02',
-    name: 'Snooker',
-    description: 'A social entertainment option for time spent with friends and fellow players.',
-    image:
-      'https://images.pexels.com/photos/18561840/pexels-photo-18561840/free-photo-of-man-playing-billiard.jpeg?auto=compress&dpr=1&w=1400',
-  },
-  {
-    number: '03',
-    name: 'Car Wash',
-    description: 'Vehicle care as part of the wider 846 experience.',
-    image:
-      'https://images.unsplash.com/photo-1505761283622-7fe50142c97f?auto=format&fit=crop&w=1400&q=85',
-  },
-  {
-    number: '04',
-    name: 'Vehicle Sales',
-    description:
-      'A clear presentation for vehicle enquiries, with real listings to be added after owner verification.',
-    image:
-      'https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1400&q=85',
-  },
-  {
-    number: '05',
-    name: 'Clearing & Forwarding',
-    description:
-      'A dedicated service area for vehicle and cargo movement, documentation and logistics.',
-    image:
-      'https://images.unsplash.com/photo-1774929103406-59c8882a9954?auto=format&fit=crop&w=1400&q=85',
-  },
+  { number: '01', name: 'Lounge & Bar', eyebrow: 'Relax • Connect • Unwind', description: 'A comfortable place to step away from the rush, meet friends, catch up and enjoy the atmosphere. The lounge and bar sit at the heart of the 846 experience, whether you are stopping by for a relaxed visit or making an evening of it.', image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1400&q=85', homeImage: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=85', icon: 'lounge' },
+  { number: '02', name: 'DJ & Entertainment', eyebrow: 'Music • Energy • Atmosphere', description: 'Music helps set the tone. DJ entertainment brings energy to the space and gives guests another reason to gather, enjoy the atmosphere and spend time together. Ask the team about the entertainment planned for your visit.', image: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1400&q=85', homeImage: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1400&q=85', icon: 'music' },
+  { number: '03', name: 'Drinks & Refreshments', eyebrow: 'A drink for the moment', description: 'Enjoy drinks and refreshments as part of your lounge visit. Whether you are catching up with friends, taking a break between games or settling in for the evening, the bar is part of the wider 846 social experience.', image: 'https://images.unsplash.com/photo-1513558161293-cdaf765edfd47?auto=format&fit=crop&w=1400&q=85', homeImage: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1400&q=85', icon: 'drink' },
+  { number: '04', name: 'Snooker', eyebrow: 'Play • Compete • Enjoy', description: 'Bring friends together for a game, practise your shots or enjoy some friendly competition. Snooker adds an active social experience to the lounge, giving guests another way to spend quality time at 846.', image: 'https://images.pexels.com/photos/18561840/pexels-photo-18561840/free-photo-of-man-playing-billiard.jpeg?auto=compress&dpr=1&w=1400', homeImage: 'https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=1400&q=85', icon: 'snooker' },
+  { number: '05', name: 'Car Wash', eyebrow: 'Care for your vehicle', description: 'Keep your vehicle looking presentable with car wash services. Whether you are visiting for the lounge or coming specifically for vehicle care, contact the team to confirm available wash options and current service arrangements.', image: 'https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1400&q=85', homeImage: 'https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&w=1400&q=85', icon: 'wash' },
+  { number: '06', name: 'Vehicle Sales', eyebrow: 'Find your next vehicle', description: '846 Autos also handles vehicle sales enquiries. Speak with the team about the vehicles currently available, request confirmed specifications and pricing, and arrange the next steps for inspection or purchase. Availability is confirmed directly rather than assumed from outdated listings.', image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=85', homeImage: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1400&q=85', icon: 'car' },
+  { number: '07', name: 'Clearing & Forwarding', eyebrow: 'Movement • Coordination • Support', description: 'For clearing and forwarding enquiries, contact 846 Autos with the details of your vehicle, shipment or logistics requirement. The team can discuss the information needed, the process involved and the appropriate next steps for your request.', image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=85', homeImage: 'https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1400&q=85', icon: 'logistics' },
 ];
 
 export const navItems = [
