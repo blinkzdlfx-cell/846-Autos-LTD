@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://846autos.com/sitemap.xml
