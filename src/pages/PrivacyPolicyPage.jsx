@@ -2,7 +2,7 @@ import { ArrowLeft, ShieldCheck, FileText, Phone } from 'lucide-react';
 import { SectionReveal } from '../components/SectionReveal';
 
 export function PrivacyPolicyPage() {
-  const effectiveDate = '4 November 2026';
+  const effectiveDate = '5 November 2026';
 
   return (
     <div className="min-h-screen bg-[#070707] text-white">
@@ -38,7 +38,7 @@ export function PrivacyPolicyPage() {
               </li>
               <li>
                 <strong>Enquiry details:</strong> information about the service you are interested
-                in (vehicle sales, car wash, lounge & bar, snooker, or clearing & forwarding).
+                in (vehicle sales, car wash, lounge & bar, DJ entertainment, drinks, snooker, or clearing & forwarding).
               </li>
               <li>
                 <strong>Usage data:</strong> anonymised information about how you navigate our
@@ -55,7 +55,7 @@ export function PrivacyPolicyPage() {
             <ul className="space-y-3 list-disc pl-6">
               <li>Respond to your enquiries about our services.</li>
               <li>
-                Provide vehicle sales, car wash, lounge & bar, snooker, and clearing & forwarding
+                Provide vehicle sales, car wash, lounge & bar, DJ entertainment, drinks, snooker, and clearing & forwarding
                 information.
               </li>
               <li>Improve our website and customer experience.</li>
@@ -179,7 +179,7 @@ export function PrivacyPolicyPage() {
                   <p className="text-sm font-medium text-white">WhatsApp</p>
                   <p className="text-sm text-white/50">
                     <a
-                      href="https://wa.me/07033301798"
+                      href="https://wa.me/2347033301798"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white hover:text-white/80 transition"
