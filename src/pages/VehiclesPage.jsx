@@ -18,6 +18,28 @@ export function VehiclesPage() {
           <p className="mt-8 max-w-3xl text-base leading-8 text-white/60 md:text-lg">846 Autos handles vehicle sales enquiries for customers looking for their next car. Rather than showing a static list that may become outdated, this page gives you a direct route to ask about current stock, confirm important details and discuss the right next step with the team.</p>
         </SectionReveal>
 
+        <SectionReveal className="mt-12">
+          <div className="grid gap-3 md:grid-cols-[1.2fr_.8fr]">
+            <div className="relative min-h-[260px] overflow-hidden rounded-3xl border border-white/10 bg-[#111] md:min-h-[340px]">
+              <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1600&q=85" alt="Modern vehicle exterior" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-70"/>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/5"/>
+              <p className="absolute bottom-6 left-6 text-sm font-medium text-white/85">Vehicle sales enquiries</p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
+              <div className="relative min-h-[160px] overflow-hidden rounded-3xl border border-white/10 bg-[#111]">
+                <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1000&q=85" alt="Vehicle detail" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-60"/>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"/>
+                <p className="absolute bottom-5 left-5 text-sm font-medium">Explore vehicle options</p>
+              </div>
+              <div className="relative min-h-[160px] overflow-hidden rounded-3xl border border-white/10 bg-[#111]">
+                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=85" alt="Car on the road" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-60"/>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"/>
+                <p className="absolute bottom-5 left-5 text-sm font-medium">Ask about current availability</p>
+              </div>
+            </div>
+          </div>
+        </SectionReveal>
+
         <SectionReveal className="mt-14">
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#101010] p-8 md:p-14">
             <div className="pointer-events-none absolute -right-10 -top-12 h-72 w-72 rounded-full border border-white/10"/><div className="pointer-events-none absolute -right-2 top-0 h-52 w-52 rounded-full border border-white/10"/><div className="pointer-events-none absolute right-10 top-10 h-32 w-32 rounded-full border border-white/10"/>
