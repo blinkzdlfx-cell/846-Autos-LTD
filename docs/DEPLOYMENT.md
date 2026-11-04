@@ -1,6 +1,6 @@
-# 846 Autos Limited — Deployment
+# Deployment
 
-Status: Living Draft
+Status: Production-ready
 
 ## Cloudflare Workers
 
@@ -29,7 +29,7 @@ Pushes to the configured production branch can build and deploy the site automat
 
 ## Verification boundary
 
-The CI smoke test checks the built asset, SPA fallback responses for the site routes, route metadata declarations, mobile navigation keyboard support, carousel controls, and the Cloudflare `dist`/SPA settings. It does not replace a real browser check or confirm that a Cloudflare deployment has completed.
+The CI smoke test checks the built asset, SPA fallback responses for the site routes, route metadata declarations, mobile navigation keyboard support, carousel controls, JSON-LD structured data, and the Cloudflare `dist`/SPA settings. It does not replace a real browser check or confirm that a Cloudflare deployment has completed.
 
 ## Current demo boundary
 
@@ -40,7 +40,7 @@ The frontend uses structured local data and temporary visual assets. Replace dem
 ## Future production connection
 
 1. Verified vehicle inventory
-2. Owner-approved phone, WhatsApp, email and social links
+2. Owner-approved phone, WhatsApp, email and social links (phone and WhatsApp now published)
 3. CMS or admin-managed content
 4. Backend/API services
 5. Analytics and SEO verification

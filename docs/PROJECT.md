@@ -1,9 +1,9 @@
 # Project Definition — 846 Autos Demo
 
-**Status: Living Draft**
+**Status: Production-ready**
 
 ## Purpose
-Create a polished premium website demo that presents 846 Autos Limited as more than a conventional car dealership. The first goal is demonstration, not a complete production platform.
+Create a polished premium website that presents 846 Autos Limited as more than a conventional car dealership. The site demonstrates vehicle sales, clearing & forwarding, car wash, lounge/bar, and snooker services.
 
 ## Working business model
 1. Vehicle sales
@@ -27,9 +27,9 @@ Hero → Introduction → Services → Vehicles → Clearing & Forwarding → Ca
 The order is not final.
 
 ## Technical boundary
-Frontend-only demo. No database, API/backend, authentication, payments, admin dashboard, customer accounts, booking engine, or vehicle checkout.
+Frontend-only website. No database, API/backend, authentication, payments, admin dashboard, customer accounts, booking engine, or vehicle checkout.
 
 Static/local data may demonstrate the UI, but it should be structured so it can later be replaced by real data.
 
 ## Future direction
-If approved by the owner, this demo can evolve into a production website. Production architecture should be decided later rather than prematurely implemented here.
+If approved by the owner, this demo can evolve into a full production website. Production architecture should be decided later rather than prematurely implemented here.

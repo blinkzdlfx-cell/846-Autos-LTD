@@ -8,11 +8,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "wrangler deploy",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write src",
     "test:smoke": "node scripts/smoke-check.mjs"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^5.0.0",
     "@tailwindcss/vite": "^4.1.0",
+    "@vitejs/plugin-react": "^5.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.500.0",
@@ -25,6 +28,15 @@
     "vite": "^7.0.0"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^8.0.7",
+    "@babel/preset-env": "^8.0.7",
+    "@babel/preset-react": "^8.0.1",
+    "@eslint/js": "^9.39.5",
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "prettier": "^3.9.10",
     "shadcn": "^4.0.0",
     "wrangler": "^4.148.0"
   }

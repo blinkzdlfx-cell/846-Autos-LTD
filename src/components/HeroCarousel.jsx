@@ -1,6 +1,6 @@
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 export function HeroCarousel({ slides }) {
   const [active, setActive] = useState(0);
@@ -13,32 +13,32 @@ export function HeroCarousel({ slides }) {
     if (reduceMotion || !isPlaying || slides.length < 2) return;
     const timer = window.setInterval(() => {
       setDirection(1);
-      setActive((value) => (value + 1) % slides.length);
+      setActive(value => (value + 1) % slides.length);
     }, 5200);
     return () => window.clearInterval(timer);
   }, [isPlaying, reduceMotion, slides.length]);
 
   const next = () => {
     setDirection(1);
-    setActive((value) => (value + 1) % slides.length);
+    setActive(value => (value + 1) % slides.length);
   };
 
   const previous = () => {
     setDirection(-1);
-    setActive((value) => (value - 1 + slides.length) % slides.length);
+    setActive(value => (value - 1 + slides.length) % slides.length);
   };
 
-  const selectSlide = (index) => {
+  const selectSlide = index => {
     if (index === active) return;
     setDirection(index > active ? 1 : -1);
     setActive(index);
   };
 
-  const handlePointerDown = (event) => {
+  const handlePointerDown = event => {
     pointerStart.current = { x: event.clientX, y: event.clientY };
   };
 
-  const handlePointerUp = (event) => {
+  const handlePointerUp = event => {
     if (!pointerStart.current) return;
     const { x, y } = pointerStart.current;
     pointerStart.current = null;
@@ -59,7 +59,9 @@ export function HeroCarousel({ slides }) {
       aria-label="846 Autos visual showcase"
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
-      onPointerCancel={() => { pointerStart.current = null; }}
+      onPointerCancel={() => {
+        pointerStart.current = null;
+      }}
     >
       <AnimatePresence initial={false} custom={direction} mode="popLayout">
         <motion.div
@@ -67,9 +69,15 @@ export function HeroCarousel({ slides }) {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url("${slides[active].src}")` }}
           custom={direction}
-          initial={reduceMotion ? false : { opacity: 0, x: direction > 0 ? "8%" : "-8%", scale: 1.025 }}
+          initial={
+            reduceMotion ? false : { opacity: 0, x: direction > 0 ? '8%' : '-8%', scale: 1.025 }
+          }
           animate={{ opacity: 1, x: 0, scale: 1 }}
-          exit={reduceMotion ? { opacity: 0 } : { opacity: 0, x: direction > 0 ? "-8%" : "8%", scale: 1.015 }}
+          exit={
+            reduceMotion
+              ? { opacity: 0 }
+              : { opacity: 0, x: direction > 0 ? '-8%' : '8%', scale: 1.015 }
+          }
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           role="img"
           aria-label={slides[active].alt}
@@ -104,13 +112,15 @@ export function HeroCarousel({ slides }) {
             onClick={() => selectSlide(index)}
             aria-label={`Show slide ${index + 1}`}
             aria-pressed={index === active}
-            className={`h-1 rounded-full transition-all duration-500 ${index === active ? "w-8 bg-white" : "w-2 bg-white/35"}`}
+            className={`h-1 rounded-full transition-all duration-500 ${index === active ? 'w-8 bg-white' : 'w-2 bg-white/35'}`}
           />
         ))}
         <button
           type="button"
-          onClick={() => setIsPlaying((playing) => !playing)}
-          aria-label={isPlaying ? "Pause automatic image rotation" : "Resume automatic image rotation"}
+          onClick={() => setIsPlaying(playing => !playing)}
+          aria-label={
+            isPlaying ? 'Pause automatic image rotation' : 'Resume automatic image rotation'
+          }
           aria-pressed={!isPlaying}
           className="ml-1 grid size-6 place-items-center rounded-full text-white/70 transition hover:bg-white/10 hover:text-white"
         >
