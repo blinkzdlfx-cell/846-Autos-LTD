@@ -87,14 +87,14 @@ export default function App() {
   useEffect(() => {
     const pageMetadata = {
       '/': {
-        title: '846 Autos Limited | Lounge, Snooker & Automotive Services',
+        title: '846 Autos Limited | Lounge, Bar, DJ Entertainment & Automotive Services',
         description:
-          "Explore 846 Autos Limited's lounge and bar, snooker, car wash, vehicle sales, and clearing and forwarding services.",
+          "Explore 846 Autos Limited's lounge and bar, DJ entertainment, drinks, snooker, car wash, vehicle sales, and clearing and forwarding services.",
       },
       '/about': {
         title: 'About 846 Autos Limited',
         description:
-          "Learn about 846 Autos Limited's combined lounge, bar, snooker, and automotive service offering.",
+          "Discover the lounge, bar, DJ entertainment, drinks, snooker and automotive services offered by 846 Autos Limited.",
       },
       '/services': {
         title: 'Services | 846 Autos Limited',
@@ -104,7 +104,7 @@ export default function App() {
       '/vehicles': {
         title: 'Vehicle Sales | 846 Autos Limited',
         description:
-          'Vehicle listings will be published after available stock, specifications, and photographs are confirmed by 846 Autos.',
+          'Ask 846 Autos about current vehicle availability, specifications, pricing and viewing arrangements.',
       },
       '/contact': {
         title: 'Contact | 846 Autos Limited',
@@ -137,7 +137,7 @@ export default function App() {
       .querySelector('meta[property="og:image"]')
       ?.setAttribute(
         'content',
-        'https://images.unsplash.com/photo-1777115213841-7ea7647f8dc1?auto=format&fit=crop&w=1200&q=85'
+        'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85'
       );
 
     const existingJsonLd = document.querySelector('script[type="application/ld+json"]');
