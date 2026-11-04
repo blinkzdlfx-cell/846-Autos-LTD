@@ -35,7 +35,7 @@ function ServiceCard({ service, index }) {
       className="group relative min-h-[410px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[.035] md:min-h-[470px]"
     >
       <img
-        src={service.image}
+        src={service.homeImage || service.image}
         alt=""
         loading="lazy"
         decoding="async"
@@ -171,7 +171,7 @@ export default function App() {
 
   const closeMenu = () => setMenuOpen(false);
   const experienceServices = services.filter(service =>
-    ['Lounge & Bar', 'Snooker'].includes(service.name)
+    ['Lounge & Bar', 'DJ & Entertainment', 'Drinks & Refreshments', 'Snooker'].includes(service.name)
   );
 
   return (
