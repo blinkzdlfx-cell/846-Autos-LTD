@@ -109,7 +109,7 @@ export default function App() {
       '/contact': {
         title: 'Contact | 846 Autos Limited',
         description:
-          'Reach 846 Autos Limited by phone at 09075505454 or WhatsApp at 07033301798 for lounge, bar, snooker, vehicle sales, car wash, and clearing & forwarding enquiries.',
+          'Reach 846 Autos Limited by phone, WhatsApp, or email for lounge, bar, DJ entertainment, drinks, snooker, vehicle sales, car wash, and clearing & forwarding enquiries.',
       },
       '/privacy-policy': {
         title: 'Privacy Policy | 846 Autos Limited',
@@ -154,7 +154,7 @@ export default function App() {
         '@type': 'PostalAddress',
         addressCountry: 'NG',
       },
-      sameAs: ['https://wa.me/07033301798'],
+      sameAs: ['https://wa.me/2347033301798'],
       description: metadata.description,
     });
     document.head.appendChild(jsonLd);
@@ -312,7 +312,7 @@ export default function App() {
                   </p>
                   <div>
                     <h2 className="max-w-5xl text-4xl font-medium leading-[.98] tracking-[-.055em] md:text-6xl lg:text-7xl">
-                      The lounge sets the mood. Snooker keeps the game going.
+                      A place to unwind, connect, enjoy the music and make time for the game.
                     </h2>
                     <p className="mt-7 max-w-2xl text-sm leading-6 text-white/50 md:text-base">
                       846 brings its lounge and entertainment offering to the forefront, with car
