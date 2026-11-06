@@ -3,9 +3,10 @@ import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { AnimatedText } from './components/AnimatedText';
 import { Button } from './components/ui/button';
+import { EventGallery } from './components/EventGallery';
 import { HeroCarousel } from './components/HeroCarousel';
 import { SectionReveal } from './components/SectionReveal';
-import { heroSlides, navItems, services } from './data/site';
+import { eventGallery, heroSlides, navItems, services } from './data/site';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { VehiclesPage } from './pages/VehiclesPage';
@@ -379,6 +380,25 @@ export default function App() {
                   <ServiceCard key={service.name} service={service} index={index} />
                 ))}
               </div>
+            </Section>
+
+            <Section id="gallery">
+              <SectionReveal>
+                <div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[.28em] text-white/35">
+                      Gallery
+                    </p>
+                    <h2 className="mt-3 text-5xl font-medium tracking-[-.055em] md:text-7xl">
+                      The official opening.
+                    </h2>
+                  </div>
+                  <p className="max-w-sm text-sm leading-6 text-white/45">
+                    Scenes from the 846 Lounge Official Opening on Saturday 26th September.
+                  </p>
+                </div>
+              </SectionReveal>
+              <EventGallery items={eventGallery} />
             </Section>
 
             <Section id="vehicles" className="border-y border-white/10">

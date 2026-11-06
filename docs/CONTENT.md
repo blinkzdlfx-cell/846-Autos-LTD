@@ -22,5 +22,8 @@ Current categories: Lounge & Bar, Snooker, Car Wash, Vehicle Sales, and Clearing
 ### Vehicles
 Use structured local data rather than embedding vehicle details throughout components. Potential fields: id, images, make, model, year, condition, transmission, fuel, mileage, price, location, description. Only populate verified fields. No fabricated listings are presented.
 
+## Real imagery
+Homepage hero, the Lounge & Bar and Drinks & Refreshments cards, and the "The official opening" gallery use real 846 Lounge photos from the Official Opening video (`public/images/event/`, see `public/images/README.md`). The gallery caption states only the date shown on the event banner (Saturday 26th September). Do not add guest-identifiable photos without owner and guest approval.
+
 ## Placeholder policy
 Demo imagery from Unsplash/Pexels must be replaced with owner-approved 846 Autos photography before production use. The business address is pending owner confirmation. Replace placeholders with owner-provided or verified material before presenting the demo as factual.

@@ -84,7 +84,7 @@ export function HeroCarousel({ slides }) {
         />
       </AnimatePresence>
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_15%,rgba(255,255,255,.2),transparent_28%),linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.15)_35%,#070707_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_15%,rgba(255,255,255,.2),transparent_28%),linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.35)_35%,#070707_100%)] pointer-events-none" />
 
       <button
         type="button"
