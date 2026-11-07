@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
-import { readFile } from 'node:fs/promises';
+import { access, readFile } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';
 
 const host = 'http://127.0.0.1:4173';
@@ -128,6 +128,17 @@ try {
     'carousel should respect reduced-motion preferences'
   );
 
+  const siteDataSource = await readFile(new URL('../src/data/site.js', import.meta.url), 'utf8');
+  const localImages = [
+    ...new Set(siteDataSource.match(/\/images\/[A-Za-z0-9/_-]+\.(?:webp|jpe?g|png)/g) ?? []),
+  ];
+  assert.ok(localImages.length > 0, 'site data should reference local event images');
+  for (const image of localImages) {
+    await access(new URL(`../dist${image}`, import.meta.url)).catch(() => {
+      throw new Error(`referenced image ${image} is missing from the production build`);
+    });
+  }
+
   const wrangler = JSON.parse(
     await readFile(new URL('../wrangler.jsonc', import.meta.url), 'utf8').then(value =>
       value.replace(/\/\/.*$/gm, '')
@@ -145,7 +156,7 @@ try {
   );
 
   console.log(
-    'Smoke checks passed: production bundle, direct route fallback, mobile keyboard access, clickable carousel controls, and Cloudflare SPA configuration.'
+    'Smoke checks passed: production bundle, direct route fallback, mobile keyboard access, clickable carousel controls, local image assets, and Cloudflare SPA configuration.'
   );
 } finally {
   server.kill('SIGTERM');

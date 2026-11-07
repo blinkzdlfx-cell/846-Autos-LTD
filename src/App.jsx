@@ -2,10 +2,11 @@ import { ArrowDown, ArrowUpRight, Menu, MoveUpRight, X } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { AnimatedText } from './components/AnimatedText';
+import { BlurredFrame } from './components/BlurredFrame';
 import { Button } from './components/ui/button';
 import { HeroCarousel } from './components/HeroCarousel';
 import { SectionReveal } from './components/SectionReveal';
-import { heroSlides, navItems, services } from './data/site';
+import { eventGallery, heroSlides, navItems, services } from './data/site';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { VehiclesPage } from './pages/VehiclesPage';
@@ -13,6 +14,7 @@ import { ContactPage } from './pages/ContactPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { EventGallery } from './components/EventGallery';
 
 function Section({ children, className = '', id }) {
   return (
@@ -27,21 +29,32 @@ function Section({ children, className = '', id }) {
 
 function ServiceCard({ service, index }) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.18 }}
-      transition={{ duration: 0.65, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative min-h-[410px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[.035] md:min-h-[470px]"
-    >
-      <img
-        src={service.homeImage || service.image}
-        alt=""
-        loading="lazy"
-        decoding="async"
-        className="absolute inset-0 h-full w-full object-cover opacity-60 transition duration-1000 ease-out group-hover:scale-105 group-hover:opacity-75"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/5" />
+<motion.article
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.18 }}
+        transition={{ duration: 0.65, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
+        className="group relative min-h-[410px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[.035] md:min-h-[470px]"
+      >
+        {service.portrait ? (
+          <BlurredFrame
+            src={service.homeImage || service.image}
+            alt=""
+            className="absolute inset-0"
+            style={{ height: '100%', width: '100%' }}
+            blur={14}
+            overlay="rgba(7,7,0.55)"
+          />
+        ) : (
+          <img
+            src={service.homeImage || service.image}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover opacity-60 transition duration-1000 ease-out group-hover:scale-105 group-hover:opacity-75"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/5" />
       <div className="relative z-10 flex h-full flex-col p-7 md:p-8">
         <div className="flex items-start justify-between text-xs uppercase tracking-[.24em] text-white/50">
           <span>{service.number}</span>
@@ -379,6 +392,25 @@ export default function App() {
                   <ServiceCard key={service.name} service={service} index={index} />
                 ))}
               </div>
+            </Section>
+
+            <Section id="gallery">
+              <SectionReveal>
+                <div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[.28em] text-white/35">
+                      Gallery
+                    </p>
+                    <h2 className="mt-3 text-5xl font-medium tracking-[-.055em] md:text-7xl">
+                      The official opening.
+                    </h2>
+                  </div>
+                  <p className="max-w-sm text-sm leading-6 text-white/45">
+                    Scenes from the 846 Lounge Official Opening on Saturday 26th September.
+                  </p>
+                </div>
+              </SectionReveal>
+              <EventGallery items={eventGallery} />
             </Section>
 
             <Section id="vehicles" className="border-y border-white/10">

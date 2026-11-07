@@ -1,6 +1,7 @@
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { AnimatePresence, useReducedMotion } from 'motion/react';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { BlurredFrame } from './BlurredFrame';
 
 export function HeroCarousel({ slides }) {
   const [active, setActive] = useState(0);
@@ -64,10 +65,15 @@ export function HeroCarousel({ slides }) {
       }}
     >
       <AnimatePresence initial={false} custom={direction} mode="popLayout">
-        <motion.div
+        <BlurredFrame
           key={slides[active].src}
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url("${slides[active].src}")` }}
+          src={slides[active].src}
+          alt={slides[active].alt}
+          reducedMotion={reduceMotion}
+          className="absolute inset-0"
+          style={{ height: '100%', width: '100%' }}
+          blur={16}
+          overlay="rgba(7,7,0.5)"
           custom={direction}
           initial={
             reduceMotion ? false : { opacity: 0, x: direction > 0 ? '8%' : '-8%', scale: 1.025 }
@@ -84,7 +90,7 @@ export function HeroCarousel({ slides }) {
         />
       </AnimatePresence>
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_15%,rgba(255,255,255,.2),transparent_28%),linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.15)_35%,#070707_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_15%,rgba(255,255,255,.2),transparent_28%),linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.35)_35%,#070707_100%)] pointer-events-none" />
 
       <button
         type="button"
