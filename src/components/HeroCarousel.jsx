@@ -1,6 +1,7 @@
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { AnimatePresence, useReducedMotion } from 'motion/react';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { BlurredFrame } from './BlurredFrame';
 
 export function HeroCarousel({ slides }) {
   const [active, setActive] = useState(0);
@@ -64,10 +65,15 @@ export function HeroCarousel({ slides }) {
       }}
     >
       <AnimatePresence initial={false} custom={direction} mode="popLayout">
-        <motion.div
+        <BlurredFrame
           key={slides[active].src}
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url("${slides[active].src}")` }}
+          src={slides[active].src}
+          alt={slides[active].alt}
+          reducedMotion={reduceMotion}
+          className="absolute inset-0"
+          style={{ height: '100%', width: '100%' }}
+          blur={16}
+          overlay="rgba(7,7,0.5)"
           custom={direction}
           initial={
             reduceMotion ? false : { opacity: 0, x: direction > 0 ? '8%' : '-8%', scale: 1.025 }

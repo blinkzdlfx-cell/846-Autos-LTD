@@ -25,5 +25,7 @@ Use structured local data rather than embedding vehicle details throughout compo
 ## Real imagery
 Homepage hero, the Lounge & Bar and Drinks & Refreshments cards, and the "The official opening" gallery use real 846 Lounge photos from the Official Opening video (`public/images/event/`, see `public/images/README.md`). The gallery caption states only the date shown on the event banner (Saturday 26th September). Do not add guest-identifiable photos without owner and guest approval.
 
+The hero and service assets are full 9:16 frames. The layout is wider than the photo, so `BlurredFrame` (`src/components/BlurredFrame.jsx`) renders the photo sharp in the centre and extends its edges into a blurred backdrop; the sides are never cropped.
+
 ## Placeholder policy
 Demo imagery from Unsplash/Pexels must be replaced with owner-approved 846 Autos photography before production use. The business address is pending owner confirmation. Replace placeholders with owner-provided or verified material before presenting the demo as factual.
