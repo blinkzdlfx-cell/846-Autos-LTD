@@ -21,18 +21,18 @@ export function VehiclesPage() {
         <SectionReveal className="mt-12">
           <div className="grid gap-3 md:grid-cols-[1.2fr_.8fr]">
             <div className="relative min-h-[260px] overflow-hidden rounded-3xl border border-white/10 bg-[#111] md:min-h-[340px]">
-              <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1600&q=85" alt="Modern vehicle exterior" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-70"/>
+              <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1600&q=85" alt="Modern vehicle exterior" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full scale-[1.06] object-cover object-center opacity-70"/>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/5"/>
               <p className="absolute bottom-6 left-6 text-sm font-medium text-white/85">Vehicle sales enquiries</p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
               <div className="relative min-h-[160px] overflow-hidden rounded-3xl border border-white/10 bg-[#111]">
-                <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1000&q=85" alt="Vehicle detail" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-60"/>
+                <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1000&q=85" alt="Vehicle detail" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full scale-[1.06] object-cover object-center opacity-60"/>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"/>
                 <p className="absolute bottom-5 left-5 text-sm font-medium">Explore vehicle options</p>
               </div>
               <div className="relative min-h-[160px] overflow-hidden rounded-3xl border border-white/10 bg-[#111]">
-                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=85" alt="Car on the road" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-60"/>
+                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=85" alt="Car on the road" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full scale-[1.06] object-cover object-center opacity-60"/>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"/>
                 <p className="absolute bottom-5 left-5 text-sm font-medium">Ask about current availability</p>
               </div>
