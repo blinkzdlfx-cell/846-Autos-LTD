@@ -43,7 +43,7 @@ function ServiceCard({ service, index }) {
             className="absolute inset-0"
             style={{ height: '100%', width: '100%' }}
             blur={14}
-            overlay="rgba(7,7,0.55)"
+            overlay="rgba(7, 7, 7, 0.55)"
           />
         ) : (
           <img
