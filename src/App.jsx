@@ -15,7 +15,7 @@ import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { EventGallery } from './components/EventGallery';
-import logo from '../real_images/846-logo.jpg';
+import logo from '../real_images/846-logo.webp';
 
 function Section({ children, className = '', id }) {
   return (
