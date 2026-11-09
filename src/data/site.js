@@ -1,8 +1,23 @@
+import loungeFullView from '../../real_images/lounge-full-view.jpg';
+import loungeFullViewOne from '../../real_images/lounge-full-view-1.jpg';
+import loungeGuests from '../../real_images/many-people-sitting-in the-lounge.jpg';
+import outdoorLounge from '../../real_images/outdoor-sitting.jpg';
+import loungeDancing from '../../real_images/people-dancing-in-the-lounge-1.jpg';
+import twoLadiesDancing from '../../real_images/2-ladies-dancing.jpg';
+import hypeMan from '../../real_images/the-hype-man-side-of-entertainment.jpg';
+import waitressEntertainment from '../../real_images/a-waitress-dacing-with-drink-and-light.jpg';
+import loungeSign from '../../real_images/846-sign-post.jpg';
+
 export const heroSlides = [
-  { src: '/images/event/hero-photo-backdrop.webp', alt: 'The 846 Lounge branded photo backdrop with the logo, car-wash mascot and snooker balls' },
-  { src: '/images/event/hero-outdoor-lounge.webp', alt: 'The 846 outdoor lounge set up for the official opening, with balloons, long dressed tables and the illuminated 846 Autos sign' },
-  { src: '/images/event/hero-signboard.webp', alt: 'The illuminated 846 Autos Ltd signboard at night, advertising sales of quality cars and clearing and forwarding' },
-  { src: '/images/event/hero-bar.webp', alt: 'A bottle with an illuminated topper on the 846 Lounge bar, with a tray of shot glasses beside it' },
+  { src: loungeFullView, alt: 'Wide view of the 846 lounge interior and seating' },
+  { src: loungeGuests, alt: 'Guests enjoying the atmosphere inside the 846 VIP lounge' },
+  { src: loungeDancing, alt: 'Guests dancing and enjoying entertainment at the 846 lounge' },
+  { src: hypeMan, alt: 'The hype man bringing energy to entertainment at 846' },
+  { src: outdoorLounge, alt: 'Outdoor lounge seating area at 846' },
+  { src: twoLadiesDancing, alt: 'Two guests dancing during an event at the 846 lounge' },
+  { src: waitressEntertainment, alt: 'Lounge service and entertainment at 846' },
+  { src: loungeFullViewOne, alt: 'Another view of the 846 lounge interior' },
+  { src: loungeSign, alt: 'The 846 Autos sign outside the venue' },
 ];
 
 export const eventGallery = [
