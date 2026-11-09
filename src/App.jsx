@@ -36,7 +36,20 @@ function ServiceCard({ service, index }) {
         transition={{ duration: 0.65, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
         className="group relative min-h-[410px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[.035] md:min-h-[470px]"
       >
-        {service.portrait ? (
+        {service.video ? (
+          <video
+            src={service.video}
+            poster={service.homeImage || service.image}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+            aria-hidden="true"
+            tabIndex={-1}
+            className="absolute inset-0 h-full w-full object-cover opacity-60 transition duration-1000 ease-out group-hover:scale-105 group-hover:opacity-75"
+          />
+        ) : service.portrait ? (
           <BlurredFrame
             src={service.homeImage || service.image}
             alt=""

@@ -49,7 +49,7 @@ export function EventGallery({ items }) {
               type="button"
               onClick={event => open(event, index)}
               aria-label={`Open photo: ${item.caption}`}
-              className="group relative block aspect-[3/4] w-full overflow-hidden rounded-3xl border border-white/10 bg-white/[.035] text-left"
+              className="group relative block aspect-[16/9] w-full overflow-hidden rounded-3xl border border-white/10 bg-white/[.035] text-left"
             >
               <img
                 src={item.src}
