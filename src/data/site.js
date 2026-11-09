@@ -16,6 +16,7 @@ import loungeSign from '../../real_images/846-sign-post.webp';
 import drinksBottle from '../../real_images/a-bottle-of-martel-in-the-longe-table.webp';
 import snookerImage from '../../real_images/snooker.webp';
 import vehicleSalesImage from '../../real_images/Vehicle Sales.webp';
+import vehicleSalesFeatureImage from '../../real_images/Vehicle Sales1.webp';
 import clearingForwardingImage from '../../real_images/Clearing & Forwarding- main.webp';
 import closeShotDancing from '../../real_images/a-close-shot-of-man-dancing-in-the-lounge.webp';
 import ladyDancingPhone from '../../real_images/a-lady-dancing-using-her-phone-as-camera.webp';
@@ -41,6 +42,8 @@ import ladyDancing from '../../real_images/a-lady-dancing-and-shaking-her-bum-bu
 import waitressService from '../../real_images/a-waitress-dacing-with-drink-and-light.webp';
 import moneyCelebration from '../../real_images/people-spraying-money-in-the-lounge.webp';
 import grilledChicken from '../../real_images/grilled-chicken-in a griller.webp';
+
+export const vehicleFeatureImage = vehicleSalesFeatureImage;
 
 const pexelsPartyVideo =
   'https://videos.pexels.com/video-files/6174256/6174256-hd_1920_1080_30fps.mp4';
@@ -137,7 +140,7 @@ export const services = [
     number: '01',
     name: 'VIP Lounge & Bar',
     eyebrow: 'Relax • Connect • Unwind',
-    description: 'A comfortable place to step away from the rush, meet friends, catch up and enjoy the atmosphere. The lounge and bar sit at the heart of the 846 experience, whether you are stopping by for a relaxed visit or making an evening of it.',
+    description: 'Enjoy a welcoming space to relax, catch up with friends and take in the atmosphere. Whether you are stopping by for a quiet drink or spending the evening with good company, the VIP lounge and bar are central to the 846 experience.',
     image: loungeFullView,
     homeImage: loungeFullView,
     icon: 'lounge',
@@ -146,7 +149,7 @@ export const services = [
     number: '02',
     name: 'DJ & Entertainment',
     eyebrow: 'Music • Energy • Atmosphere',
-    description: 'Music helps set the tone. DJ entertainment brings energy to the space and gives guests another reason to gather, enjoy the atmosphere and spend time together. Ask the team about the entertainment planned for your visit.',
+    description: 'Enjoy music that sets the mood and brings the room to life. Our DJ entertainment adds energy to your visit, creating the right atmosphere for a great time with friends.',
     image: hypeMan,
     homeImage: hypeMan,
     video: pexelsPartyVideo,
@@ -156,7 +159,7 @@ export const services = [
     number: '03',
     name: 'Drinks & Refreshments',
     eyebrow: 'A drink for the moment',
-    description: 'Enjoy drinks and refreshments as part of your lounge visit. Whether you are catching up with friends, taking a break between games or settling in for the evening, the bar is part of the wider 846 social experience.',
+    description: 'Choose from drinks and refreshments while you relax, catch up with friends or take a break between games. The bar completes the lounge experience, whether you are visiting briefly or staying for the evening.',
     image: drinksBottle,
     homeImage: drinksBottle,
     icon: 'drink',
@@ -165,7 +168,7 @@ export const services = [
     number: '04',
     name: 'Snooker',
     eyebrow: 'Play • Compete • Enjoy',
-    description: 'Bring friends together for a game, practise your shots or enjoy some friendly competition. Snooker adds an active social experience to the lounge, giving guests another way to spend quality time at 846.',
+    description: 'Enjoy a friendly match, practise your shots or challenge your friends to a game. The snooker area adds another way to relax, connect and enjoy your time at 846.',
     image: snookerImage,
     homeImage: snookerImage,
     icon: 'snooker',
@@ -174,7 +177,7 @@ export const services = [
     number: '05',
     name: 'Car Wash',
     eyebrow: 'Care for your vehicle',
-    description: 'Keep your vehicle looking presentable with car wash services. Whether you are visiting for the lounge or coming specifically for vehicle care, contact the team to confirm available wash options and current service arrangements.',
+    description: 'Keep your vehicle clean and presentable with 846 car wash services. Contact the team to confirm available wash options and arrange a convenient visit.',
     image: 'https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1400&q=85',
     homeImage: 'https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&w=1400&q=85',
     video: pexelsCarWashVideo,
@@ -184,7 +187,7 @@ export const services = [
     number: '06',
     name: 'Vehicle Sales',
     eyebrow: 'Find your next vehicle',
-    description: '846 Autos also handles vehicle sales enquiries. Speak with the team about the vehicles currently available, request confirmed specifications and pricing, and arrange the next steps for inspection or purchase. Availability is confirmed directly rather than assumed from outdated listings.',
+    description: 'Explore vehicle sales through 846 Autos. Contact the team for current stock, verified specifications, condition and pricing, then arrange an inspection or viewing before you decide.',
     image: vehicleSalesImage,
     homeImage: vehicleSalesImage,
     icon: 'car',
@@ -193,7 +196,7 @@ export const services = [
     number: '07',
     name: 'Clearing & Forwarding',
     eyebrow: 'Movement • Coordination • Support',
-    description: 'For clearing and forwarding enquiries, contact 846 Autos with the details of your vehicle, shipment or logistics requirement. The team can discuss the information needed, the process involved and the appropriate next steps for your request.',
+    description: 'Need help with vehicle clearing or forwarding? Share your shipment or logistics requirements with the 846 Autos team to discuss the process, required information and next steps.',
     image: clearingForwardingImage,
     homeImage: clearingForwardingImage,
     icon: 'logistics',
