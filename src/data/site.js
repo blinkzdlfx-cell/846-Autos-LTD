@@ -50,7 +50,7 @@ const pexelsCarWashVideo =
 const aiHeroSlides = Object.entries(aiHeroImages)
   .sort(([pathA], [pathB]) => pathA.localeCompare(pathB, undefined, { numeric: true }))
   .map(([path, src]) => {
-    const match = path.match(/AI-(\\d+)-(outpainted|zoom)-16x9\\.jpg$/);
+    const match = path.match(/AI-(\d+)-(outpainted|zoom)-16x9\.jpg$/);
     const imageId = match?.[1] ?? '';
     const variant = match?.[2] ?? 'landscape';
     return {
@@ -107,12 +107,10 @@ export const eventGallery = [
   { src: '/images/event/gallery-outdoor-seating.webp', alt: 'Long tables with floral cloths and white chair covers on artificial grass under a canopy of balloons', caption: 'Outdoor seating' },
   { src: '/images/event/gallery-grilled-chicken.webp', alt: 'Red-marinated grilled chicken on a metal rack', caption: 'Grill' },
   { src: '/images/event/gallery-bar-martell.webp', alt: 'A Martell VS bottle with an illuminated topper on the bar, with spirits shelves and shot glasses behind', caption: 'The bar' },
-  { src: ai001Outpainted, alt: 'AI-generated landscape image 001, outpainted version', caption: 'AI 001 · Outpainted' },
-  { src: ai001Zoom, alt: 'AI-generated landscape image 001, zoom version', caption: 'AI 001 · Zoom' },
-  { src: ai002Outpainted, alt: 'AI-generated landscape image 002, outpainted version', caption: 'AI 002 · Outpainted' },
-  { src: ai002Zoom, alt: 'AI-generated landscape image 002, zoom version', caption: 'AI 002 · Zoom' },
-  { src: ai003Outpainted, alt: 'AI-generated landscape image 003, outpainted version', caption: 'AI 003 · Outpainted' },
-  { src: ai003Zoom, alt: 'AI-generated landscape image 003, zoom version', caption: 'AI 003 · Zoom' },
+  ...aiHeroSlides.map((slide, index) => ({
+    ...slide,
+    caption: `AI landscape ${String(index + 1).padStart(2, '0')}`,
+  })),
   { src: loungeFullView, alt: 'Original 846 lounge interior photograph', caption: 'Lounge interior' },
   { src: loungeDancing, alt: 'Original photograph of guests dancing at 846', caption: 'Lounge entertainment' },
   { src: hypeMan, alt: 'Original photograph of the 846 entertainment host', caption: 'Entertainment host' },
