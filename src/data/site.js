@@ -19,7 +19,7 @@ import vehicleSalesImage from '../../real_images/Vehicle Sales.webp';
 import clearingForwardingImage from '../../real_images/Clearing & Forwarding- main.webp';
 import closeShotDancing from '../../real_images/a-close-shot-of-man-dancing-in-the-lounge.webp';
 import ladyDancingPhone from '../../real_images/a-lady-dancing-using-her-phone-as-camera.webp';
-import ladyEarConversation from "../../real_images/a-lady-telling-her-friend-something-in-her-ear-while-they're-dancing.jpg";
+import ladyEarConversation from "../../real_images/a-lady-telling-her-friend-something-in-her-ear-while-they're-dancing.webp";
 import manGreeting from '../../real_images/a-man-saying-hi-to-the-camera-in-the-lounge.webp';
 import manDrinks from '../../real_images/a-man-showing-off-with-drinks.webp';
 import manWalking from '../../real_images/a-man-walking-inside-the-lounge.webp';
