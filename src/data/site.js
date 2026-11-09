@@ -63,7 +63,7 @@ const aiHeroSlides = Object.entries(aiHeroImages)
   .sort(([pathA], [pathB]) => pathA.localeCompare(pathB, undefined, { numeric: true }))
   .map(([path, src]) => {
     // Match generated WebP filenames without exposing technical asset identifiers.
-    const isGeneratedWebp = /AI-\\d+-(?:outpainted|zoom)-16x9\\.webp$/.test(path);
+    const isGeneratedWebp = path.endsWith('-16x9.webp');
     return {
       src,
       alt: isGeneratedWebp
