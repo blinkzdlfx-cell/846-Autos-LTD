@@ -139,14 +139,14 @@ try {
   const conversionScript = await readFile(new URL('./convert-images-to-webp.mjs', import.meta.url), 'utf8');
   assert.match(conversionScript, /sharp-cli@6\.1\.0/, 'image conversion should use a pinned sharp-cli version');
   const appSourceForImages = await readFile(new URL('../src/App.jsx', import.meta.url), 'utf8');
-  assert.match(appSourceForImages, /846-logo\\.webp/, 'the shared site logo should use its generated WebP asset');
-  assert.doesNotMatch(appSourceForImages, /846-logo\\.jpg/, 'the shared site logo should not load the original JPEG');
+  assert.ok(appSourceForImages.includes('846-logo.webp'), 'the shared site logo should use its generated WebP asset');
+  assert.ok(!appSourceForImages.includes('846-logo.jpg'), 'the shared site logo should not load the original JPEG');
   const siteDataSource = await readFile(new URL('../src/data/site.js', import.meta.url), 'utf8');
   assert.match(siteDataSource, /AI-\*-16x9\.webp/, 'AI hero images should use generated WebP files');
   assert.doesNotMatch(siteDataSource, /from ['\"][^'\"]+\.jpg['\"]/, 'site data should not import original JPEG files directly');
-  assert.match(siteDataSource, /AI-\\d+-(?:outpainted|zoom)-16x9\\.webp/, 'AI image matching should recognize generated WebP filenames');
+  assert.ok(siteDataSource.includes("path.endsWith('-16x9.webp')"), 'AI image matching should recognize generated WebP filenames');
   assert.match(siteDataSource, /caption: aiGalleryCaptions/, 'AI gallery images should use customer-friendly captions');
-  assert.doesNotMatch(siteDataSource, /caption:\\s*`AI landscape|alt:\\s*`846 Autos AI landscape/, 'technical image labels must not appear in customer-facing captions or alt text');
+  assert.doesNotMatch(siteDataSource, /caption:\s*`AI landscape|alt:\s*`846 Autos AI landscape/, 'technical image labels must not appear in customer-facing captions or alt text');
   assert.match(
     siteDataSource,
     /export const heroSlides[\s\S]*?\.slice\(0, 20\)/,
