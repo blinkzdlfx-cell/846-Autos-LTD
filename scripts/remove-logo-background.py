@@ -1,5 +1,12 @@
 from pathlib import Path
-from PIL import Image, ImageDraw
+import subprocess
+import sys
+
+try:
+    from PIL import Image, ImageDraw
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--disable-pip-version-check", "Pillow"])
+    from PIL import Image, ImageDraw
 
 source = Path("assets/source/846-logo-original.jpg")
 destination = Path("real_images/846-logo.webp")
