@@ -28,7 +28,22 @@ export function ServicesPage() {
             return (
               <SectionReveal key={service.name} delay={(index % 2) * 0.04}>
                 <article className="group relative isolate flex min-h-[440px] flex-col justify-end overflow-hidden rounded-[1.8rem] border border-white/10 bg-[#111] md:min-h-[500px]">
-                  <img src={service.image} alt="" loading="lazy" decoding="async" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-55 transition duration-700 group-hover:scale-105 group-hover:opacity-70"/>
+                  {service.video ? (
+                    <video
+                      src={service.video}
+                      poster={service.image}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="none"
+                      aria-hidden="true"
+                      tabIndex={-1}
+                      className="absolute inset-0 -z-20 h-full w-full object-cover opacity-55 transition duration-700 group-hover:scale-105 group-hover:opacity-70"
+                    />
+                  ) : (
+                    <img src={service.image} alt="" loading="lazy" decoding="async" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-55 transition duration-700 group-hover:scale-105 group-hover:opacity-70"/>
+                  )}
                   <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/75 to-black/10"/>
                   <div className="absolute right-7 top-7 grid size-14 place-items-center rounded-2xl border border-white/20 bg-black/30 backdrop-blur-md"><Icon size={23}/></div>
                   <div className="relative p-7 md:p-9">
