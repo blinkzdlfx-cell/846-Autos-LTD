@@ -1,5 +1,6 @@
 import { ArrowUpRight, Music2, Coffee, Trophy, CarFront, Sparkles } from 'lucide-react';
 import { SectionReveal } from '../components/SectionReveal';
+import loungeFullView from '../../real_images/lounge-full-view.webp';
 
 const highlights = [
   { icon: Music2, title: 'Music and atmosphere', text: 'DJ entertainment adds rhythm and energy to the experience, creating a setting for guests to meet, relax and enjoy their time.' },
@@ -19,13 +20,22 @@ export function AboutPage() {
         </SectionReveal>
 
         <SectionReveal className="mt-16">
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#111] p-8 md:p-14">
+          <div className="relative isolate overflow-hidden rounded-[2rem] border border-white/10 bg-[#111] p-8 md:p-14">
+            <img
+              src={loungeFullView}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              className="pointer-events-none absolute inset-0 h-full w-full object-cover [clip-path:polygon(58%_0,100%_0,100%_100%,34%_100%)]"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#111] via-[#111]/95 to-[#111]/35" />
             <div className="pointer-events-none absolute -right-12 -top-24 h-80 w-80 rounded-full border border-white/10" />
             <div className="pointer-events-none absolute -right-2 -top-14 h-60 w-60 rounded-full border border-white/10" />
             <div className="pointer-events-none absolute -right-[-4rem] top-12 h-36 w-36 rounded-full border border-white/10" />
             <div className="relative grid gap-10 md:grid-cols-[.8fr_1.2fr] md:items-end">
               <div><p className="text-xs uppercase tracking-[.25em] text-white/40">The 846 experience</p><h2 className="mt-5 text-4xl font-medium leading-tight tracking-[-.05em] md:text-6xl">Come for the atmosphere. Stay for the experience.</h2></div>
-              <p className="max-w-2xl text-sm leading-7 text-white/60 md:text-base">A good visit can mean different things to different people. It might be a relaxed stop at the bar, an evening with music, a few frames of snooker with friends, or taking care of a vehicle while you are nearby. 846 brings these experiences under one business, with a team available to guide each enquiry to the right service.</p>
+              <p className="max-w-2xl text-sm leading-7 text-white/75 md:text-base">A good visit can mean different things to different people. It might be a relaxed stop at the bar, an evening with music, a few frames of snooker with friends, or taking care of a vehicle while you are nearby. 846 brings these experiences under one business, with a team available to guide each enquiry to the right service.</p>
             </div>
           </div>
         </SectionReveal>
