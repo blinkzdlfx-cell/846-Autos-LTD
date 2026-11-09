@@ -82,7 +82,6 @@ export const services = [
     description: 'Enjoy drinks and refreshments as part of your lounge visit. Whether you are catching up with friends, taking a break between games or settling in for the evening, the bar is part of the wider 846 social experience.',
     image: drinksBottle,
     homeImage: drinksBottle,
-    portrait: true,
     icon: 'drink',
   },
   {
