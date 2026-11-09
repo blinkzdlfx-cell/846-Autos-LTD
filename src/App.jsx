@@ -236,7 +236,7 @@ export default function App() {
             href="/contact"
             className="hidden items-center gap-2 rounded-full border border-white/15 bg-white/[.05] px-4 py-2.5 text-xs font-medium text-white/80 backdrop-blur-md transition hover:bg-white/10 md:inline-flex"
           >
-            Contact <MoveUpRight size={14} />
+            Book a Table <MoveUpRight size={14} />
           </a>
           <button
             type="button"
