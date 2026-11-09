@@ -15,6 +15,7 @@ import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { EventGallery } from './components/EventGallery';
+import logo from '../real_images/846-logo.jpg';
 
 function Section({ children, className = '', id }) {
   return (
@@ -198,7 +199,7 @@ export default function App() {
 
   const closeMenu = () => setMenuOpen(false);
   const experienceServices = services.filter(service =>
-    ['Lounge & Bar', 'DJ & Entertainment', 'Drinks & Refreshments', 'Snooker'].includes(service.name)
+    ['VIP Lounge & Bar', 'DJ & Entertainment', 'Drinks & Refreshments', 'Snooker'].includes(service.name)
   );
 
   return (
@@ -214,8 +215,7 @@ export default function App() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 transition-all duration-500 md:px-8 md:py-5">
           <a href="/" className="group flex items-center gap-2" aria-label="846 Autos home">
-            <span className="text-xl font-black tracking-[-.08em]">846</span>
-            <span className="h-1.5 w-1.5 rounded-full bg-white/70 transition group-hover:scale-125" />
+            <img src={logo} alt="846 Autos Limited" className="h-10 w-auto max-w-[150px] object-contain transition group-hover:opacity-85" />
           </a>
           <nav
             aria-label="Primary navigation"
@@ -504,9 +504,8 @@ export default function App() {
 
       <footer className="border-t border-white/10 px-5 py-8 md:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 text-xs text-white/35 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-2 text-white/60">
-            <span className="font-black tracking-[-.06em]">846</span>
-            <span>Autos Limited</span>
+          <div className="flex items-center">
+            <img src={logo} alt="846 Autos Limited" className="h-9 w-auto max-w-[140px] object-contain" />
           </div>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             <span>Lounge • Snooker • Automotive</span>
