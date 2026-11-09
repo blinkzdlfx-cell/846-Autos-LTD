@@ -58,7 +58,7 @@ export const eventGallery = [
 export const services = [
   {
     number: '01',
-    name: 'Lounge & Bar',
+    name: 'VIP Lounge & Bar',
     eyebrow: 'Relax • Connect • Unwind',
     description: 'A comfortable place to step away from the rush, meet friends, catch up and enjoy the atmosphere. The lounge and bar sit at the heart of the 846 experience, whether you are stopping by for a relaxed visit or making an evening of it.',
     image: loungeFullView,
