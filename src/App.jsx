@@ -418,7 +418,7 @@ export default function App() {
                     </h2>
                   </div>
                   <p className="max-w-sm text-sm leading-6 text-white/45">
-                    A look back at the 846 Lounge opening on Saturday, 26th September.
+                    Explore moments, atmosphere and good times at 846 Lounge.
                   </p>
                 </div>
               </SectionReveal>
