@@ -109,10 +109,7 @@ export function HeroCarousel({ slides }) {
       </button>
 
       <div className="pointer-events-auto absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 rounded-full border border-white/10 bg-black/30 px-4 py-2.5 text-white backdrop-blur-md">
-        <span className="min-w-[5.5rem] font-mono text-[11px] tracking-[0.18em] text-white/80" aria-live="polite">
-          {String(active + 1).padStart(2, '0')} <span className="text-white/35">/</span> {String(slides.length).padStart(2, '0')}
-        </span>
-        <span className="h-px w-12 overflow-hidden bg-white/25 sm:w-20">
+        <span className="h-px w-12 overflow-hidden bg-white/25 sm:w-20" aria-hidden="true">
           <motion.span
             className="block h-full origin-left bg-white"
             animate={{ scaleX: (active + 1) / slides.length }}
