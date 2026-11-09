@@ -17,8 +17,6 @@ import drinksBottle from '../../real_images/a-bottle-of-martel-in-the-longe-tabl
 import snookerImage from '../../real_images/snooker.webp';
 import vehicleSalesImage from '../../real_images/Vehicle Sales.webp';
 import vehicleSalesFeatureImage from '../../real_images/Vehicle Sales1.webp';
-
-export const vehicleFeatureImage = vehicleSalesFeatureImage;
 import clearingForwardingImage from '../../real_images/Clearing & Forwarding- main.webp';
 import closeShotDancing from '../../real_images/a-close-shot-of-man-dancing-in-the-lounge.webp';
 import ladyDancingPhone from '../../real_images/a-lady-dancing-using-her-phone-as-camera.webp';
@@ -44,6 +42,8 @@ import ladyDancing from '../../real_images/a-lady-dancing-and-shaking-her-bum-bu
 import waitressService from '../../real_images/a-waitress-dacing-with-drink-and-light.webp';
 import moneyCelebration from '../../real_images/people-spraying-money-in-the-lounge.webp';
 import grilledChicken from '../../real_images/grilled-chicken-in a griller.webp';
+
+export const vehicleFeatureImage = vehicleSalesFeatureImage;
 
 const pexelsPartyVideo =
   'https://videos.pexels.com/video-files/6174256/6174256-hd_1920_1080_30fps.mp4';
