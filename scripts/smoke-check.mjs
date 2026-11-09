@@ -134,7 +134,13 @@ try {
     'hero carousel should not display the current image count'
   );
 
+  const packageJson = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
+  assert.match(packageJson.scripts.build, /images:webp/, 'production build should convert local images to WebP before bundling');
+  const conversionScript = await readFile(new URL('./convert-images-to-webp.mjs', import.meta.url), 'utf8');
+  assert.match(conversionScript, /sharp-cli@6\.1\.0/, 'image conversion should use a pinned sharp-cli version');
   const siteDataSource = await readFile(new URL('../src/data/site.js', import.meta.url), 'utf8');
+  assert.match(siteDataSource, /AI-\*-16x9\.webp/, 'AI hero images should use generated WebP files');
+  assert.doesNotMatch(siteDataSource, /from ['\"][^'\"]+\.jpg['\"]/, 'site data should not import original JPEG files directly');
   assert.match(
     siteDataSource,
     /export const heroSlides[\s\S]*?\.slice\(0, 20\)/,
