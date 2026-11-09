@@ -297,11 +297,15 @@ export default function App() {
                       <span className="text-white/30">Lounge & entertainment</span>
                     </div>
                     <h1 className="max-w-6xl text-[clamp(3.4rem,9.2vw,9rem)] font-semibold leading-[.86] tracking-[-.075em]">
-                      Stay for
+                      <AnimatedText words={['Stay for', 'Come for', 'Make time for']} />
                       <br />
-                      the whole
-                      <br className="sm:hidden" />{' '}
-                      <AnimatedText words={['experience.', 'lounge.', 'snooker.', 'good times.']} />
+                      <AnimatedText
+                        words={[
+                          'the whole experience.',
+                          'the music and atmosphere.',
+                          'the game and good times.',
+                        ]}
+                      />
                     </h1>
                     <p className="mt-8 max-w-xl text-sm leading-6 text-white/60 md:text-base">
                       Make yourself at home at the lounge and bar, enjoy the music, share a drink or play a game of snooker. 846 also offers car wash, vehicle sales, and clearing and forwarding services.
