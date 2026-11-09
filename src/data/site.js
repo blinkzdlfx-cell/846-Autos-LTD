@@ -15,6 +15,9 @@ import hypeMan from '../../real_images/the-hype-man-side-of-entertainment.jpg';
 import waitressEntertainment from '../../real_images/a-waitress-dacing-with-drink-and-light.jpg';
 import loungeSign from '../../real_images/846-sign-post.jpg';
 import drinksBottle from '../../real_images/a-bottle-of-martel-in-the-longe-table.jpg';
+import snookerImage from '../../real_images/snooker.jpg';
+import vehicleSalesImage from '../../real_images/Vehicle Sales.webp';
+import clearingForwardingImage from '../../real_images/Clearing & Forwarding- main.webp';
 
 const pexelsPartyVideo =
   'https://videos.pexels.com/video-files/6174256/6174256-hd_1920_1080_30fps.mp4';
@@ -89,8 +92,8 @@ export const services = [
     name: 'Snooker',
     eyebrow: 'Play • Compete • Enjoy',
     description: 'Bring friends together for a game, practise your shots or enjoy some friendly competition. Snooker adds an active social experience to the lounge, giving guests another way to spend quality time at 846.',
-    image: 'https://images.pexels.com/photos/18561840/pexels-photo-18561840/free-photo-of-man-playing-billiard.jpeg?auto=compress&dpr=1&w=1400',
-    homeImage: 'https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=1400&q=85',
+    image: snookerImage,
+    homeImage: snookerImage,
     icon: 'snooker',
   },
   {
@@ -108,8 +111,8 @@ export const services = [
     name: 'Vehicle Sales',
     eyebrow: 'Find your next vehicle',
     description: '846 Autos also handles vehicle sales enquiries. Speak with the team about the vehicles currently available, request confirmed specifications and pricing, and arrange the next steps for inspection or purchase. Availability is confirmed directly rather than assumed from outdated listings.',
-    image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=85',
-    homeImage: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1400&q=85',
+    image: vehicleSalesImage,
+    homeImage: vehicleSalesImage,
     icon: 'car',
   },
   {
@@ -117,8 +120,8 @@ export const services = [
     name: 'Clearing & Forwarding',
     eyebrow: 'Movement • Coordination • Support',
     description: 'For clearing and forwarding enquiries, contact 846 Autos with the details of your vehicle, shipment or logistics requirement. The team can discuss the information needed, the process involved and the appropriate next steps for your request.',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=85',
-    homeImage: 'https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1400&q=85',
+    image: clearingForwardingImage,
+    homeImage: clearingForwardingImage,
     icon: 'logistics',
   },
 ];
