@@ -6,7 +6,7 @@ import { BlurredFrame } from './components/BlurredFrame';
 import { Button } from './components/ui/button';
 import { HeroCarousel } from './components/HeroCarousel';
 import { SectionReveal } from './components/SectionReveal';
-import { eventGallery, heroSlides, navItems, services } from './data/site';
+import { eventGallery, heroSlides, navItems, services, vehicleFeatureImage } from './data/site';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { VehiclesPage } from './pages/VehiclesPage';
@@ -215,7 +215,7 @@ export default function App() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 transition-all duration-500 md:px-8 md:py-5">
           <a href="/" className="group flex items-center gap-2" aria-label="846 Autos home">
-            <img src={logo} alt="846 Autos Limited" className="h-10 w-auto max-w-[150px] object-contain transition group-hover:opacity-85" />
+            <img src={logo} alt="846 Autos Limited" className="h-12 w-auto max-w-[170px] object-contain transition group-hover:opacity-85" />
           </a>
           <nav
             aria-label="Primary navigation"
@@ -304,8 +304,7 @@ export default function App() {
                       <AnimatedText words={['experience.', 'lounge.', 'snooker.', 'good times.']} />
                     </h1>
                     <p className="mt-8 max-w-xl text-sm leading-6 text-white/60 md:text-base">
-                      Lounge & Bar, snooker and vehicle care lead the 846 experience—with vehicle
-                      sales and clearing & forwarding alongside.
+                      Make yourself at home at the lounge and bar, enjoy the music, share a drink or play a game of snooker. 846 also offers car wash, vehicle sales, and clearing and forwarding services.
                     </p>
                     <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                       <Button
@@ -342,9 +341,7 @@ export default function App() {
                       A place to unwind, connect, enjoy the music and make time for the game.
                     </h2>
                     <p className="mt-7 max-w-2xl text-sm leading-6 text-white/50 md:text-base">
-                      846 brings its lounge and entertainment offering to the forefront, with car
-                      wash, vehicle sales and clearing & forwarding presented as part of the wider
-                      business.
+                      From relaxed lounge visits and lively entertainment to snooker and refreshments, 846 offers a place to spend time with friends. Car wash, vehicle sales, and clearing and forwarding complete the wider range of services.
                     </p>
                   </div>
                 </div>
@@ -354,6 +351,8 @@ export default function App() {
             <Section id="experience">
               <SectionReveal>
                 <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[.035]">
+                  <img src={experienceServices[0]?.homeImage} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-35" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/65" />
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(255,255,255,.12),transparent_30%),radial-gradient(circle_at_85%_75%,rgba(255,255,255,.08),transparent_25%)]" />
                   <div className="relative grid min-h-[520px] gap-10 p-8 md:grid-cols-2 md:p-14">
                     <div className="flex flex-col">
@@ -366,15 +365,15 @@ export default function App() {
                     </div>
                     <div className="flex flex-col justify-end">
                       <p className="max-w-lg text-lg leading-8 text-white/55">
-                        Enjoy the lounge and bar, DJ entertainment, drinks and a game of snooker. These social experiences sit at the heart of 846, with car wash, vehicle sales and clearing and forwarding services available alongside.
+                        Settle into the lounge, enjoy live DJ entertainment, order a drink or challenge your friends to a game of snooker. The experience is at the heart of 846, with automotive and logistics services available too.
                       </p>
                       <div className="mt-8 grid grid-cols-2 gap-3">
                         {experienceServices.map((service, index) => (
-                          <div key={service.name} className="group relative flex min-h-32 flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#151515] p-4">
-                            <div className="pointer-events-none absolute -right-7 -top-8 size-28 rounded-full border border-white/10 transition duration-700 group-hover:scale-125" />
-                            <div className="pointer-events-none absolute -right-1 -top-2 size-16 rounded-full border border-white/10" />
-                            <span className="relative text-[10px] uppercase tracking-[.2em] text-white/35">0{index + 1} / 846</span>
-                            <div className="relative mt-5"><h3 className="text-sm font-medium text-white/90">{service.name}</h3><p className="mt-1 text-[10px] leading-4 text-white/40">{service.eyebrow}</p></div>
+                          <div key={service.name} className="group relative flex min-h-40 flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#151515] p-4">
+                            <img src={service.homeImage || service.image} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-65 transition duration-700 group-hover:scale-105 group-hover:opacity-80" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/15" />
+                            <span className="relative z-10 text-[10px] uppercase tracking-[.2em] text-white/65">0{index + 1} / 846</span>
+                            <div className="relative z-10 mt-5"><h3 className="text-sm font-medium text-white">{service.name}</h3><p className="mt-1 text-[10px] leading-4 text-white/75">{service.eyebrow}</p></div>
                           </div>
                         ))}
                       </div>
@@ -396,7 +395,7 @@ export default function App() {
                     </h2>
                   </div>
                   <p className="max-w-sm text-sm leading-6 text-white/45">
-                    Explore the lounge and bar, DJ entertainment, drinks, snooker and the automotive services available through 846 Autos.
+                    From the VIP lounge and bar to DJ entertainment, refreshments, snooker and vehicle services, discover what makes 846 a place to return to.
                   </p>
                 </div>
               </SectionReveal>
@@ -415,11 +414,11 @@ export default function App() {
                       Gallery
                     </p>
                     <h2 className="mt-3 text-5xl font-medium tracking-[-.055em] md:text-7xl">
-                      The official opening.
+                      846 Lounge Opening.
                     </h2>
                   </div>
                   <p className="max-w-sm text-sm leading-6 text-white/45">
-                    Scenes from the 846 Lounge Official Opening on Saturday 26th September.
+                    A look back at the 846 Lounge opening on Saturday, 26th September.
                   </p>
                 </div>
               </SectionReveal>
@@ -438,12 +437,15 @@ export default function App() {
                     </h2>
                   </div>
                   <div className="md:pb-2">
+                    <div className="mb-4 overflow-hidden rounded-3xl border border-white/10">
+                      <img src={vehicleFeatureImage} alt="Vehicle available through 846 Autos" loading="lazy" decoding="async" className="aspect-[16/10] w-full object-cover" />
+                    </div>
                     <div className="rounded-3xl border border-white/10 bg-white/[.03] p-6 md:p-8">
                       <p className="text-xs uppercase tracking-[.24em] text-white/35">
                         Vehicle enquiries
                       </p>
                       <p className="mt-4 text-lg leading-7 text-white/65">
-                        Ask the 846 Autos team about vehicles currently available for sale. You can request confirmed specifications, condition, pricing and viewing arrangements before making a decision.
+                        Looking for your next vehicle? Speak with the 846 Autos team about current availability, condition, specifications and pricing. You can also arrange a viewing and get the details you need before making a decision.
                       </p>
                       <span className="mt-6 inline-flex items-center rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/45">
                         Ask about available vehicles
