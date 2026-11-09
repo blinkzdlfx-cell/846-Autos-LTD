@@ -297,11 +297,15 @@ export default function App() {
                       <span className="text-white/30">Lounge & entertainment</span>
                     </div>
                     <h1 className="max-w-6xl text-[clamp(3.4rem,9.2vw,9rem)] font-semibold leading-[.86] tracking-[-.075em]">
-                      Stay for
+                      <AnimatedText
+                        words={['Stay for', 'Come for', 'Join us for']}
+                        interval={6200}
+                        variant="counter"
+                      />
                       <br />
-                      the whole
-                      <br className="sm:hidden" />{' '}
-                      <AnimatedText words={['experience.', 'lounge.', 'snooker.', 'good times.']} />
+                      <AnimatedText
+                        words={['the experience.', 'the music.', 'good times.']}
+                      />
                     </h1>
                     <p className="mt-8 max-w-xl text-sm leading-6 text-white/60 md:text-base">
                       Make yourself at home at the lounge and bar, enjoy the music, share a drink or play a game of snooker. 846 also offers car wash, vehicle sales, and clearing and forwarding services.
@@ -414,7 +418,7 @@ export default function App() {
                       Gallery
                     </p>
                     <h2 className="mt-3 text-5xl font-medium tracking-[-.055em] md:text-7xl">
-                      846 Lounge Opening.
+                      Life at 846 Lounge.
                     </h2>
                   </div>
                   <p className="max-w-sm text-sm leading-6 text-white/45">
@@ -437,17 +441,23 @@ export default function App() {
                     </h2>
                   </div>
                   <div className="md:pb-2">
-                    <div className="mb-4 overflow-hidden rounded-3xl border border-white/10">
-                      <img src={vehicleFeatureImage} alt="Vehicle available through 846 Autos" loading="lazy" decoding="async" className="aspect-[16/10] w-full object-cover" />
-                    </div>
-                    <div className="rounded-3xl border border-white/10 bg-white/[.03] p-6 md:p-8">
-                      <p className="text-xs uppercase tracking-[.24em] text-white/35">
+                    <div className="group relative isolate min-h-[300px] overflow-hidden rounded-3xl border border-white/10 p-6 md:min-h-[340px] md:p-8">
+                      <img
+                        src={vehicleFeatureImage}
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 -z-20 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black/85 via-black/65 to-black/35" />
+                      <p className="text-xs uppercase tracking-[.24em] text-white/60">
                         Vehicle enquiries
                       </p>
-                      <p className="mt-4 text-lg leading-7 text-white/65">
+                      <p className="mt-4 max-w-xl text-lg leading-7 text-white/90 md:text-xl md:leading-8">
                         Looking for your next vehicle? Speak with the 846 Autos team about current availability, condition, specifications and pricing. You can also arrange a viewing and get the details you need before making a decision.
                       </p>
-                      <span className="mt-6 inline-flex items-center rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/45">
+                      <span className="mt-6 inline-flex items-center rounded-full border border-white/25 bg-black/20 px-3 py-1.5 text-xs text-white/75 backdrop-blur-sm">
                         Ask about available vehicles
                       </span>
                     </div>
