@@ -28,12 +28,6 @@ export function HeroCarousel({ slides }) {
     setActive(value => (value - 1 + slides.length) % slides.length);
   };
 
-  const selectSlide = index => {
-    if (index === active) return;
-    setDirection(index > active ? 1 : -1);
-    setActive(index);
-  };
-
   const handlePointerDown = event => {
     pointerStart.current = { x: event.clientX, y: event.clientY };
   };
@@ -65,7 +59,7 @@ export function HeroCarousel({ slides }) {
         pointerStart.current = null;
       }}
     >
-      <AnimatePresence initial={false} custom={direction} mode="wait">
+      <AnimatePresence initial={false} custom={direction} mode="sync">
         <motion.img
           key={currentSlide.src}
           src={currentSlide.src}
@@ -74,18 +68,23 @@ export function HeroCarousel({ slides }) {
           decoding="async"
           fetchPriority="high"
           draggable="false"
-          className="pointer-events-none absolute inset-0 block h-full w-full object-cover object-center"
+          className="pointer-events-none absolute inset-0 block h-full w-full object-cover object-center will-change-transform"
           custom={direction}
           initial={
-            reduceMotion ? { opacity: 1 } : { opacity: 0, x: direction > 0 ? '8%' : '-8%', scale: 1.025 }
+            reduceMotion
+              ? { opacity: 1 }
+              : { opacity: 0, x: direction > 0 ? '5%' : '-5%', scale: 1.035 }
           }
           animate={{ opacity: 1, x: 0, scale: 1 }}
           exit={
             reduceMotion
               ? { opacity: 0 }
-              : { opacity: 0, x: direction > 0 ? '-8%' : '8%', scale: 1.015 }
+              : { opacity: 0, x: direction > 0 ? '-5%' : '5%', scale: 1.015 }
           }
-          transition={{ duration: reduceMotion ? 0 : 0.75, ease: [0.22, 1, 0.36, 1] }}
+          transition={{
+            duration: reduceMotion ? 0 : 1.15,
+            ease: [0.22, 1, 0.36, 1],
+          }}
         />
       </AnimatePresence>
 
@@ -109,17 +108,17 @@ export function HeroCarousel({ slides }) {
         <ChevronRight size={19} />
       </button>
 
-      <div className="pointer-events-auto absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-white/10 bg-black/25 px-3 py-2 backdrop-blur-md">
-        {slides.map((slide, index) => (
-          <button
-            key={slide.src}
-            type="button"
-            onClick={() => selectSlide(index)}
-            aria-label={`Show slide ${index + 1}`}
-            aria-pressed={index === active}
-            className={`h-1 rounded-full transition-all duration-500 ${index === active ? 'w-8 bg-white' : 'w-2 bg-white/35'}`}
+      <div className="pointer-events-auto absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 rounded-full border border-white/10 bg-black/30 px-4 py-2.5 text-white backdrop-blur-md">
+        <span className="min-w-[5.5rem] font-mono text-[11px] tracking-[0.18em] text-white/80" aria-live="polite">
+          {String(active + 1).padStart(2, '0')} <span className="text-white/35">/</span> {String(slides.length).padStart(2, '0')}
+        </span>
+        <span className="h-px w-12 overflow-hidden bg-white/25 sm:w-20">
+          <motion.span
+            className="block h-full origin-left bg-white"
+            animate={{ scaleX: (active + 1) / slides.length }}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           />
-        ))}
+        </span>
         <button
           type="button"
           onClick={() => setIsPlaying(playing => !playing)}
@@ -127,7 +126,7 @@ export function HeroCarousel({ slides }) {
             isPlaying ? 'Pause automatic image rotation' : 'Resume automatic image rotation'
           }
           aria-pressed={!isPlaying}
-          className="ml-1 grid size-6 place-items-center rounded-full text-white/70 transition hover:bg-white/10 hover:text-white"
+          className="grid size-6 place-items-center rounded-full text-white/70 transition hover:bg-white/10 hover:text-white"
         >
           {isPlaying ? <Pause size={12} /> : <Play size={12} />}
         </button>
