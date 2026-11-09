@@ -63,10 +63,12 @@ const aiHeroSlides = Object.entries(aiHeroImages)
   .sort(([pathA], [pathB]) => pathA.localeCompare(pathB, undefined, { numeric: true }))
   .map(([path, src]) => {
     // Match generated WebP filenames without exposing technical asset identifiers.
-    path.match(/AI-(\\d+)-(outpainted|zoom)-16x9\\.webp$/);
+    const isGeneratedWebp = /AI-\\d+-(?:outpainted|zoom)-16x9\\.webp$/.test(path);
     return {
       src,
-      alt: 'Lounge and entertainment at 846 Autos',
+      alt: isGeneratedWebp
+        ? 'Lounge and entertainment at 846 Autos'
+        : '846 Autos lounge and entertainment',
     };
   });
 
