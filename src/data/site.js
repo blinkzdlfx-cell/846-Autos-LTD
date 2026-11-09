@@ -1,61 +1,74 @@
-const aiHeroImages = import.meta.glob('../../ai_outpainted/AI-*-16x9.jpg', {
+const aiHeroImages = import.meta.glob('../../ai_outpainted/AI-*-16x9.webp', {
   eager: true,
   query: '?url',
   import: 'default',
 });
 
-import loungeFullView from '../../real_images/lounge-full-view.jpg';
-import loungeFullViewOne from '../../real_images/lounge-full-view-1.jpg';
-import loungeGuests from '../../real_images/many-people-sitting-in the-lounge.jpg';
-import outdoorLounge from '../../real_images/outdoor-sitting.jpg';
-import loungeDancing from '../../real_images/people-dancing-in-the-lounge-1.jpg';
-import twoLadiesDancing from '../../real_images/2-ladies-dancing.jpg';
-import hypeMan from '../../real_images/the-hype-man-side-of-entertainment.jpg';
-import waitressEntertainment from '../../real_images/a-waitress-dacing-with-drink-and-light.jpg';
-import loungeSign from '../../real_images/846-sign-post.jpg';
-import drinksBottle from '../../real_images/a-bottle-of-martel-in-the-longe-table.jpg';
-import snookerImage from '../../real_images/snooker.jpg';
+import loungeFullView from '../../real_images/lounge-full-view.webp';
+import loungeFullViewOne from '../../real_images/lounge-full-view-1.webp';
+import loungeGuests from '../../real_images/many-people-sitting-in the-lounge.webp';
+import outdoorLounge from '../../real_images/outdoor-sitting.webp';
+import loungeDancing from '../../real_images/people-dancing-in-the-lounge-1.webp';
+import twoLadiesDancing from '../../real_images/2-ladies-dancing.webp';
+import hypeMan from '../../real_images/the-hype-man-side-of-entertainment.webp';
+import waitressEntertainment from '../../real_images/a-waitress-dacing-with-drink-and-light.webp';
+import loungeSign from '../../real_images/846-sign-post.webp';
+import drinksBottle from '../../real_images/a-bottle-of-martel-in-the-longe-table.webp';
+import snookerImage from '../../real_images/snooker.webp';
 import vehicleSalesImage from '../../real_images/Vehicle Sales.webp';
 import clearingForwardingImage from '../../real_images/Clearing & Forwarding- main.webp';
-import closeShotDancing from '../../real_images/a-close-shot-of-man-dancing-in-the-lounge.jpg';
-import ladyDancingPhone from '../../real_images/a-lady-dancing-using-her-phone-as-camera.jpg';
-import ladyEarConversation from "../../real_images/a-lady-telling-her-friend-something-in-her-ear-while-they're-dancing.jpg";
-import manGreeting from '../../real_images/a-man-saying-hi-to-the-camera-in-the-lounge.jpg';
-import manDrinks from '../../real_images/a-man-showing-off-with-drinks.jpg';
-import manWalking from '../../real_images/a-man-walking-inside-the-lounge.jpg';
-import waitressMartell from '../../real_images/a-waitress-dancing-with-a-martel-bottle.jpg';
-import waitressHennessy from '../../real_images/a-waitress-holding-a-hennesy-bottle.jpg';
-import waitressJameson from '../../real_images/a-waitress-holding-a-jameson-bottle-with-a-light-on-top-of-the-bottle.jpg';
-import womanCup from '../../real_images/a-woman-dancing-with-a-cup-on-her-hand.jpg';
-import womanWithMan from '../../real_images/a-woman-dancing-with-a-man.jpg';
-import groupLounge from '../../real_images/group-of-men-looking-at-the-camera-and-sitting-on-the-vip-lounge.jpg';
-import jamesonBottle from '../../real_images/side-view-of-the-jameson-bottle.jpg';
-import handshakeOne from '../../real_images/two-men-shaking-hands-in-the-lounge.jpg';
-import handshakeTwo from '../../real_images/two-men-shaking-hands-in-the-lounge-1.jpg';
-import smilingGuest from '../../real_images/woman smiling and showing her hand.jpg';
-import womanSoloDance from '../../real_images/woman-dacing-on-her-own-inside-the-lounge.jpg';
-import womanClockIt from '../../real_images/woman-on the lounge-doing-clock-it.jpg';
-import womanGreeting from '../../real_images/woman-saying-hi-to-the-camera.jpg';
-import womanDancingLook from '../../real_images/a-woman-dancing-ooking-at-her-body.jpg';
-import ladyDancing from '../../real_images/a-lady-dancing-and-shaking-her-bum-bum.jpg';
-import waitressService from '../../real_images/a-waitress-dacing-with-drink-and-light.jpg';
-import moneyCelebration from '../../real_images/people-spraying-money-in-the-lounge.jpg';
-import grilledChicken from '../../real_images/grilled-chicken-in a griller.jpg';
+import closeShotDancing from '../../real_images/a-close-shot-of-man-dancing-in-the-lounge.webp';
+import ladyDancingPhone from '../../real_images/a-lady-dancing-using-her-phone-as-camera.webp';
+import ladyEarConversation from "../../real_images/a-lady-telling-her-friend-something-in-her-ear-while-they're-dancing.webp";
+import manGreeting from '../../real_images/a-man-saying-hi-to-the-camera-in-the-lounge.webp';
+import manDrinks from '../../real_images/a-man-showing-off-with-drinks.webp';
+import manWalking from '../../real_images/a-man-walking-inside-the-lounge.webp';
+import waitressMartell from '../../real_images/a-waitress-dancing-with-a-martel-bottle.webp';
+import waitressHennessy from '../../real_images/a-waitress-holding-a-hennesy-bottle.webp';
+import waitressJameson from '../../real_images/a-waitress-holding-a-jameson-bottle-with-a-light-on-top-of-the-bottle.webp';
+import womanCup from '../../real_images/a-woman-dancing-with-a-cup-on-her-hand.webp';
+import womanWithMan from '../../real_images/a-woman-dancing-with-a-man.webp';
+import groupLounge from '../../real_images/group-of-men-looking-at-the-camera-and-sitting-on-the-vip-lounge.webp';
+import jamesonBottle from '../../real_images/side-view-of-the-jameson-bottle.webp';
+import handshakeOne from '../../real_images/two-men-shaking-hands-in-the-lounge.webp';
+import handshakeTwo from '../../real_images/two-men-shaking-hands-in-the-lounge-1.webp';
+import smilingGuest from '../../real_images/woman smiling and showing her hand.webp';
+import womanSoloDance from '../../real_images/woman-dacing-on-her-own-inside-the-lounge.webp';
+import womanClockIt from '../../real_images/woman-on the lounge-doing-clock-it.webp';
+import womanGreeting from '../../real_images/woman-saying-hi-to-the-camera.webp';
+import womanDancingLook from '../../real_images/a-woman-dancing-ooking-at-her-body.webp';
+import ladyDancing from '../../real_images/a-lady-dancing-and-shaking-her-bum-bum.webp';
+import waitressService from '../../real_images/a-waitress-dacing-with-drink-and-light.webp';
+import moneyCelebration from '../../real_images/people-spraying-money-in-the-lounge.webp';
+import grilledChicken from '../../real_images/grilled-chicken-in a griller.webp';
 
 const pexelsPartyVideo =
   'https://videos.pexels.com/video-files/6174256/6174256-hd_1920_1080_30fps.mp4';
 const pexelsCarWashVideo =
   'https://videos.pexels.com/video-files/4849141/4849141-hd_1920_1080_24fps.mp4';
 
+const aiGalleryCaptions = [
+  'The 846 Lounge Experience',
+  'An Evening at 846',
+  'Inside the VIP Lounge',
+  'Lounge Atmosphere',
+  'Entertainment at 846',
+  'Time to Unwind',
+  'A Place to Connect',
+  'The 846 Experience',
+  'Moments at the Lounge',
+];
+
 const aiHeroSlides = Object.entries(aiHeroImages)
   .sort(([pathA], [pathB]) => pathA.localeCompare(pathB, undefined, { numeric: true }))
   .map(([path, src]) => {
-    const match = path.match(/AI-(\d+)-(outpainted|zoom)-16x9\.jpg$/);
-    const imageId = match?.[1] ?? '';
-    const variant = match?.[2] ?? 'landscape';
+    // Match generated WebP filenames without exposing technical asset identifiers.
+    const isGeneratedWebp = path.endsWith('-16x9.webp');
     return {
       src,
-      alt: `846 Autos AI landscape image ${imageId}, ${variant} 16:9 version`,
+      alt: isGeneratedWebp
+        ? 'Lounge and entertainment at 846 Autos'
+        : '846 Autos lounge and entertainment',
     };
   });
 
@@ -111,7 +124,7 @@ export const eventGallery = [
   { src: '/images/event/gallery-bar-martell.webp', alt: 'A Martell VS bottle with an illuminated topper on the bar, with spirits shelves and shot glasses behind', caption: 'The bar' },
   ...aiHeroSlides.map((slide, index) => ({
     ...slide,
-    caption: `AI landscape ${String(index + 1).padStart(2, '0')}`,
+    caption: aiGalleryCaptions[index % aiGalleryCaptions.length],
   })),
   { src: loungeFullView, alt: 'Original 846 lounge interior photograph', caption: 'Lounge interior' },
   { src: loungeDancing, alt: 'Original photograph of guests dancing at 846', caption: 'Lounge entertainment' },

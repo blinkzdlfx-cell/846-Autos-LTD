@@ -4,14 +4,16 @@
   "version": "0.2.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "npm run images:logo && npm run images:webp && vite",
+    "build": "npm run images:logo && npm run images:webp && vite build",
     "preview": "vite preview",
     "deploy": "wrangler deploy",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "format": "prettier --write src",
-    "test:smoke": "node scripts/smoke-check.mjs"
+    "test:smoke": "node scripts/smoke-check.mjs",
+    "images:webp": "node scripts/convert-images-to-webp.mjs",
+    "images:logo": "python3 scripts/remove-logo-background.py"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.0",

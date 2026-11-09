@@ -134,7 +134,29 @@ try {
     'hero carousel should not display the current image count'
   );
 
+  const packageJson = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
+  assert.match(packageJson.scripts.build, /images:webp/, 'production build should convert local images to WebP before bundling');
+  const conversionScript = await readFile(new URL('./convert-images-to-webp.mjs', import.meta.url), 'utf8');
+  assert.match(conversionScript, /sharp-cli@6\.1\.0/, 'image conversion should use a pinned sharp-cli version');
+  const appSourceForImages = await readFile(new URL('../src/App.jsx', import.meta.url), 'utf8');
+  assert.ok(appSourceForImages.includes('846-logo.webp'), 'the shared site logo should use its generated WebP asset');
+  assert.ok(!appSourceForImages.includes('846-logo.jpg'), 'the shared site logo should not load the original JPEG');
+  const logoProcessor = await readFile(new URL('./remove-logo-background.py', import.meta.url), 'utf8');
+  assert.match(logoProcessor, /ImageDraw\.floodfill/, 'logo processing should remove only the edge-connected background');
+  assert.match(logoProcessor, /assets\/source\/846-logo-original\.jpg/, 'the original logo should be retained only as a processing source');
+  assert.match(logoProcessor, /real_images\/846-logo\.webp/, 'logo processing should generate the transparent WebP used by the site');
+  await access(new URL('../real_images/846-logo.webp', import.meta.url));
+  await access(new URL('../assets/source/846-logo-original.jpg', import.meta.url));
+  await access(new URL('../real_images/846-logo.jpg', import.meta.url)).then(
+    () => { throw new Error('the old black-background logo file should be removed'); },
+    error => { if (error.code !== 'ENOENT') throw error; }
+  );
   const siteDataSource = await readFile(new URL('../src/data/site.js', import.meta.url), 'utf8');
+  assert.match(siteDataSource, /AI-\*-16x9\.webp/, 'AI hero images should use generated WebP files');
+  assert.doesNotMatch(siteDataSource, /from ['\"][^'\"]+\.jpg['\"]/, 'site data should not import original JPEG files directly');
+  assert.ok(siteDataSource.includes("path.endsWith('-16x9.webp')"), 'AI image matching should recognize generated WebP filenames');
+  assert.match(siteDataSource, /caption: aiGalleryCaptions/, 'AI gallery images should use customer-friendly captions');
+  assert.doesNotMatch(siteDataSource, /caption:\s*`AI landscape|alt:\s*`846 Autos AI landscape/, 'technical image labels must not appear in customer-facing captions or alt text');
   assert.match(
     siteDataSource,
     /export const heroSlides[\s\S]*?\.slice\(0, 20\)/,
