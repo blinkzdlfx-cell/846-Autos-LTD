@@ -53,7 +53,7 @@ If `npm ci` fails, fix the dependency declarations and regenerate the lockfile u
 
 The GitHub Actions workflow at `.github/workflows/build.yml` runs on pull requests targeting `main`, pushes to `main`, and manual dispatch.
 
-It performs a clean lockfile-based install, builds the production bundle, and runs the smoke test. It does not deploy to Cloudflare.
+The production build first runs `npm run images:webp`, which uses the pinned `sharp-cli` tool to generate WebP copies of local JPEG and PNG files in `real_images/` and `ai_outpainted/`. Original files are retained. Vite then bundles the WebP versions referenced by the site. The workflow continues with the production smoke test; it does not deploy to Cloudflare.
 
 Recommended workflow:
 
@@ -99,6 +99,14 @@ After Cloudflare reports a successful deployment, verify:
 The current frontend uses structured local data and some temporary visual assets. The README's business details and contact channels must be confirmed by the owner before final publication. Replace temporary imagery and any unverified address, inventory, prices, testimonials, and operational claims with owner-approved information.
 
 This repository currently has no database, API, authentication, payment, CMS, or admin dashboard. Do not describe those features as implemented.
+
+## Image format workflow
+
+- Keep original JPEG and PNG uploads in `real_images/` and `ai_outpainted/` as source files.
+- Run `npm run images:webp` to generate same-name `.webp` copies beside the originals.
+- `npm run dev` and `npm run build` run conversion automatically before starting Vite.
+- The website references the generated WebP copies; do not remove the originals.
+- The conversion uses WebP quality 82 as a practical starting point. Review visual quality and file-size changes before changing that setting.
 
 ## Future enhancements
 
