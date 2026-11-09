@@ -65,7 +65,7 @@ export function HeroCarousel({ slides }) {
         pointerStart.current = null;
       }}
     >
-      <AnimatePresence initial={false} custom={direction} mode="wait">
+      <AnimatePresence initial={false} custom={direction} mode="sync">
         <motion.img
           key={currentSlide.src}
           src={currentSlide.src}
@@ -74,18 +74,23 @@ export function HeroCarousel({ slides }) {
           decoding="async"
           fetchPriority="high"
           draggable="false"
-          className="pointer-events-none absolute inset-0 block h-full w-full object-cover object-center"
+          className="pointer-events-none absolute inset-0 block h-full w-full object-cover object-center will-change-transform"
           custom={direction}
           initial={
-            reduceMotion ? { opacity: 1 } : { opacity: 0, x: direction > 0 ? '8%' : '-8%', scale: 1.025 }
+            reduceMotion
+              ? { opacity: 1 }
+              : { opacity: 0, x: direction > 0 ? '5%' : '-5%', scale: 1.035 }
           }
           animate={{ opacity: 1, x: 0, scale: 1 }}
           exit={
             reduceMotion
               ? { opacity: 0 }
-              : { opacity: 0, x: direction > 0 ? '-8%' : '8%', scale: 1.015 }
+              : { opacity: 0, x: direction > 0 ? '-5%' : '5%', scale: 1.015 }
           }
-          transition={{ duration: reduceMotion ? 0 : 0.75, ease: [0.22, 1, 0.36, 1] }}
+          transition={{
+            duration: reduceMotion ? 0 : 1.15,
+            ease: [0.22, 1, 0.36, 1],
+          }}
         />
       </AnimatePresence>
 
