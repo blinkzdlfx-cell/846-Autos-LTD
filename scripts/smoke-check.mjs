@@ -141,6 +141,16 @@ try {
   const appSourceForImages = await readFile(new URL('../src/App.jsx', import.meta.url), 'utf8');
   assert.ok(appSourceForImages.includes('846-logo.webp'), 'the shared site logo should use its generated WebP asset');
   assert.ok(!appSourceForImages.includes('846-logo.jpg'), 'the shared site logo should not load the original JPEG');
+  const logoProcessor = await readFile(new URL('./remove-logo-background.py', import.meta.url), 'utf8');
+  assert.match(logoProcessor, /ImageDraw\.floodfill/, 'logo processing should remove only the edge-connected background');
+  assert.match(logoProcessor, /assets\/source\/846-logo-original\.jpg/, 'the original logo should be retained only as a processing source');
+  assert.match(logoProcessor, /real_images\/846-logo\.webp/, 'logo processing should generate the transparent WebP used by the site');
+  await access(new URL('../real_images/846-logo.webp', import.meta.url));
+  await access(new URL('../assets/source/846-logo-original.jpg', import.meta.url));
+  await access(new URL('../real_images/846-logo.jpg', import.meta.url)).then(
+    () => { throw new Error('the old black-background logo file should be removed'); },
+    error => { if (error.code !== 'ENOENT') throw error; }
+  );
   const siteDataSource = await readFile(new URL('../src/data/site.js', import.meta.url), 'utf8');
   assert.match(siteDataSource, /AI-\*-16x9\.webp/, 'AI hero images should use generated WebP files');
   assert.doesNotMatch(siteDataSource, /from ['\"][^'\"]+\.jpg['\"]/, 'site data should not import original JPEG files directly');
