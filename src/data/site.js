@@ -95,10 +95,12 @@ const originalHeroSlides = [
   { src: ladyDancing, alt: 'A guest enjoying the entertainment' },
 ];
 
+// Keep the homepage carousel focused and lightweight: 10 AI images interleaved
+// with 10 original 846 photos, rather than loading the entire image collection.
 export const heroSlides = aiHeroSlides.flatMap((slide, index) => {
   const original = index % 2 === 1 ? originalHeroSlides[(index - 1) / 2] : null;
   return original ? [slide, original] : [slide];
-}).concat(originalHeroSlides.slice(Math.ceil(aiHeroSlides.length / 2)));
+}).concat(originalHeroSlides.slice(Math.ceil(aiHeroSlides.length / 2))).slice(0, 20);
 
 export const eventGallery = [
   { src: '/images/event/gallery-opening-banner.webp', alt: 'The 846 Lounge Official Opening banner announcing Saturday 26th September, with Top DJs and Top Hypers', caption: 'Official Opening' },
