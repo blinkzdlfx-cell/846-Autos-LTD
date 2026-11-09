@@ -297,7 +297,11 @@ export default function App() {
                       <span className="text-white/30">Lounge & entertainment</span>
                     </div>
                     <h1 className="max-w-6xl text-[clamp(3.4rem,9.2vw,9rem)] font-semibold leading-[.86] tracking-[-.075em]">
-                      <AnimatedText words={['Stay for', 'Come for', 'Join us for']} />
+                      <AnimatedText
+                        words={['Stay for', 'Come for', 'Join us for']}
+                        interval={6200}
+                        variant="counter"
+                      />
                       <br />
                       <AnimatedText
                         words={['the experience.', 'the music.', 'good times.']}
