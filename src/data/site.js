@@ -47,15 +47,26 @@ const pexelsPartyVideo =
 const pexelsCarWashVideo =
   'https://videos.pexels.com/video-files/4849141/4849141-hd_1920_1080_24fps.mp4';
 
+const aiGalleryCaptions = [
+  'The 846 Lounge Experience',
+  'An Evening at 846',
+  'Inside the VIP Lounge',
+  'Lounge Atmosphere',
+  'Entertainment at 846',
+  'Time to Unwind',
+  'A Place to Connect',
+  'The 846 Experience',
+  'Moments at the Lounge',
+];
+
 const aiHeroSlides = Object.entries(aiHeroImages)
   .sort(([pathA], [pathB]) => pathA.localeCompare(pathB, undefined, { numeric: true }))
   .map(([path, src]) => {
-    const match = path.match(/AI-(\d+)-(outpainted|zoom)-16x9\.jpg$/);
-    const imageId = match?.[1] ?? '';
-    const variant = match?.[2] ?? 'landscape';
+    // Match generated WebP filenames without exposing technical asset identifiers.
+    path.match(/AI-(\\d+)-(outpainted|zoom)-16x9\\.webp$/);
     return {
       src,
-      alt: `846 Autos AI landscape image ${imageId}, ${variant} 16:9 version`,
+      alt: 'Lounge and entertainment at 846 Autos',
     };
   });
 
@@ -111,7 +122,7 @@ export const eventGallery = [
   { src: '/images/event/gallery-bar-martell.webp', alt: 'A Martell VS bottle with an illuminated topper on the bar, with spirits shelves and shot glasses behind', caption: 'The bar' },
   ...aiHeroSlides.map((slide, index) => ({
     ...slide,
-    caption: `AI landscape ${String(index + 1).padStart(2, '0')}`,
+    caption: aiGalleryCaptions[index % aiGalleryCaptions.length],
   })),
   { src: loungeFullView, alt: 'Original 846 lounge interior photograph', caption: 'Lounge interior' },
   { src: loungeDancing, alt: 'Original photograph of guests dancing at 846', caption: 'Lounge entertainment' },
