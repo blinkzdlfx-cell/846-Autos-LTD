@@ -128,7 +128,18 @@ try {
     'carousel should respect reduced-motion preferences'
   );
 
+  assert.doesNotMatch(
+    carouselSource,
+    /String\(active \+ 1\).*slides\.length/s,
+    'hero carousel should not display the current image count'
+  );
+
   const siteDataSource = await readFile(new URL('../src/data/site.js', import.meta.url), 'utf8');
+  assert.match(
+    siteDataSource,
+    /export const heroSlides[\s\S]*?\.slice\(0, 20\)/,
+    'homepage hero carousel should be capped at 20 slides'
+  );
   const localImages = [
     ...new Set(siteDataSource.match(/\/images\/[A-Za-z0-9/_-]+\.(?:webp|jpe?g|png)/g) ?? []),
   ];
