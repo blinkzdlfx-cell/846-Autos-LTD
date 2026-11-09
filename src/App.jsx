@@ -414,7 +414,7 @@ export default function App() {
                       Gallery
                     </p>
                     <h2 className="mt-3 text-5xl font-medium tracking-[-.055em] md:text-7xl">
-                      846 Lounge Opening.
+                      Life at 846 Lounge.
                     </h2>
                   </div>
                   <p className="max-w-sm text-sm leading-6 text-white/45">
@@ -437,17 +437,23 @@ export default function App() {
                     </h2>
                   </div>
                   <div className="md:pb-2">
-                    <div className="mb-4 overflow-hidden rounded-3xl border border-white/10">
-                      <img src={vehicleFeatureImage} alt="Vehicle available through 846 Autos" loading="lazy" decoding="async" className="aspect-[16/10] w-full object-cover" />
-                    </div>
-                    <div className="rounded-3xl border border-white/10 bg-white/[.03] p-6 md:p-8">
-                      <p className="text-xs uppercase tracking-[.24em] text-white/35">
+                    <div className="group relative isolate min-h-[300px] overflow-hidden rounded-3xl border border-white/10 p-6 md:min-h-[340px] md:p-8">
+                      <img
+                        src={vehicleFeatureImage}
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 -z-20 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black/85 via-black/65 to-black/35" />
+                      <p className="text-xs uppercase tracking-[.24em] text-white/60">
                         Vehicle enquiries
                       </p>
-                      <p className="mt-4 text-lg leading-7 text-white/65">
+                      <p className="mt-4 max-w-xl text-lg leading-7 text-white/90 md:text-xl md:leading-8">
                         Looking for your next vehicle? Speak with the 846 Autos team about current availability, condition, specifications and pricing. You can also arrange a viewing and get the details you need before making a decision.
                       </p>
-                      <span className="mt-6 inline-flex items-center rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/45">
+                      <span className="mt-6 inline-flex items-center rounded-full border border-white/25 bg-black/20 px-3 py-1.5 text-xs text-white/75 backdrop-blur-sm">
                         Ask about available vehicles
                       </span>
                     </div>
