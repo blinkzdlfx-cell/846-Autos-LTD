@@ -1,7 +1,6 @@
-import { AnimatePresence, useReducedMotion } from 'motion/react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import { BlurredFrame } from './BlurredFrame';
 
 export function HeroCarousel({ slides }) {
   const [active, setActive] = useState(0);
@@ -52,6 +51,8 @@ export function HeroCarousel({ slides }) {
     else previous();
   };
 
+  const currentSlide = slides[active];
+
   return (
     <div
       className="absolute inset-0 touch-pan-y select-none"
@@ -64,19 +65,19 @@ export function HeroCarousel({ slides }) {
         pointerStart.current = null;
       }}
     >
-      <AnimatePresence initial={false} custom={direction} mode="popLayout">
-        <BlurredFrame
-          key={slides[active].src}
-          src={slides[active].src}
-          alt={slides[active].alt}
-          reducedMotion={reduceMotion}
-          className="absolute inset-0"
-          style={{ height: '100%', width: '100%' }}
-          blur={16}
-          overlay="rgba(7,7,0.5)"
+      <AnimatePresence initial={false} custom={direction} mode="wait">
+        <motion.img
+          key={currentSlide.src}
+          src={currentSlide.src}
+          alt={currentSlide.alt || ''}
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+          draggable="false"
+          className="pointer-events-none absolute inset-0 block h-full w-full object-cover object-center"
           custom={direction}
           initial={
-            reduceMotion ? false : { opacity: 0, x: direction > 0 ? '8%' : '-8%', scale: 1.025 }
+            reduceMotion ? { opacity: 1 } : { opacity: 0, x: direction > 0 ? '8%' : '-8%', scale: 1.025 }
           }
           animate={{ opacity: 1, x: 0, scale: 1 }}
           exit={
@@ -84,13 +85,11 @@ export function HeroCarousel({ slides }) {
               ? { opacity: 0 }
               : { opacity: 0, x: direction > 0 ? '-8%' : '8%', scale: 1.015 }
           }
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          role="img"
-          aria-label={slides[active].alt}
+          transition={{ duration: reduceMotion ? 0 : 0.75, ease: [0.22, 1, 0.36, 1] }}
         />
       </AnimatePresence>
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_15%,rgba(255,255,255,.2),transparent_28%),linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.35)_35%,#070707_100%)] pointer-events-none" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_15%,rgba(255,255,255,.16),transparent_28%),linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.32)_35%,rgba(7,7,7,.88)_100%)]" />
 
       <button
         type="button"
