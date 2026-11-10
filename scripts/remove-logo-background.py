@@ -1,4 +1,5 @@
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 
@@ -10,7 +11,9 @@ except ImportError:
 
 source = Path("assets/source/846-logo-original.jpg")
 destination = Path("real_images/846-logo.webp")
+favicon = Path("public/favicon.webp")
 destination.parent.mkdir(parents=True, exist_ok=True)
+favicon.parent.mkdir(parents=True, exist_ok=True)
 
 image = Image.open(source).convert("RGB")
 # Flood only the dark region connected to the canvas edge. The shield's dark
@@ -32,4 +35,7 @@ for y in range(image.height):
 
 image.putalpha(alpha)
 image.save(destination, "WEBP", quality=92, method=6)
+# Publish the exact same transparent image used by the site header as favicon.
+shutil.copyfile(destination, favicon)
 print(f"Created transparent logo: {destination}")
+print(f"Created transparent favicon: {favicon}")
