@@ -180,8 +180,16 @@ export default function App() {
       email: 'enquiries@846autos.com',
       address: {
         '@type': 'PostalAddress',
+        streetAddress: '182 Ijegun Road, Ore-Ofe Bus Stop, Ijegun',
+        addressLocality: 'Lagos',
         addressCountry: 'NG',
       },
+      openingHoursSpecification: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].map(dayOfWeek => ({
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek,
+        opens: '09:00',
+        closes: '22:00',
+      })),
       sameAs: ['https://wa.me/2347033301798'],
       description: metadata.description,
     });
