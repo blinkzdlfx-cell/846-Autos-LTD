@@ -153,6 +153,28 @@ export default function App() {
     };
 
     document.title = metadata.title;
+
+    const canonicalUrl = `${window.location.origin}${pathname === '/' ? '/' : pathname}`;
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = canonicalUrl;
+
+    const setMeta = (selector, attribute, value, create) => {
+      let element = document.querySelector(selector);
+      if (!element) {
+        element = document.createElement('meta');
+        Object.entries(create).forEach(([key, content]) => element.setAttribute(key, content));
+        document.head.appendChild(element);
+      }
+      element.setAttribute(attribute, value);
+    };
+    setMeta('meta[property="og:url"]', 'content', canonicalUrl, { property: 'og:url' });
+    setMeta('meta[name="twitter:title"]', 'content', metadata.title, { name: 'twitter:title' });
+    setMeta('meta[name="twitter:description"]', 'content', metadata.description, { name: 'twitter:description' });
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute('content', metadata.description);
