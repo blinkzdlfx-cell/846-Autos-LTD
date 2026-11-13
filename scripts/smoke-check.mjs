@@ -229,6 +229,7 @@ try {
   assert.equal(wrangler.main, 'src/worker.js', 'Cloudflare should use the maintenance-aware Worker entry point');
   assert.equal(wrangler.assets?.binding, 'ASSETS', 'Worker should have a named static asset binding');
   assert.equal(wrangler.keep_vars, true, 'Wrangler should preserve dashboard-managed variables');
+  assert.equal(wrangler.assets?.run_worker_first, true, 'Cloudflare should invoke the Worker before serving every static asset');
   await access(new URL('../src/worker.js', import.meta.url));
   await access(new URL('../docs/MAINTENANCE_MODE.md', import.meta.url));
 

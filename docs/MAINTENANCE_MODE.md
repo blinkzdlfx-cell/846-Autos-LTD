@@ -14,7 +14,7 @@ If the variable is absent, maintenance mode is off. The setting is case-insensit
 
 ## Behaviour
 
-- A small Cloudflare Worker checks the setting before forwarding requests to Workers Static Assets.
+- The static-assets configuration sets `run_worker_first: true`, so a small Cloudflare Worker checks the setting before forwarding requests to Workers Static Assets for every request.
 - While enabled, every request—including the homepage, nested routes, and static assets—receives the 846 Autos-branded maintenance page.
 - Responses use HTTP `503 Service Unavailable`, `Cache-Control: no-store`, and `X-Robots-Tag: noindex, nofollow, noarchive`.
 - A `HEAD` request receives the same status and headers without a response body.
