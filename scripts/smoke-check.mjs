@@ -188,6 +188,50 @@ try {
     'Cloudflare should enable SPA fallback'
   );
 
+  // Maintenance-mode Worker behaviour and dashboard-controlled runtime flag.
+  const { default: maintenanceWorker } = await import('../src/worker.js');
+  const maintenanceRoutes = ['/', '/about', '/services', '/contact', '/favicon.svg', '/assets/site.css'];
+  let assetFetches = 0;
+  const assetBinding = {
+    fetch: async request => {
+      assetFetches += 1;
+      return new Response(`served:${new URL(request.url).pathname}`, { status: 200 });
+    },
+  };
+
+  for (const route of maintenanceRoutes) {
+    const response = await maintenanceWorker.fetch(
+      new Request(`https://846autos.com${route}`),
+      { MAINTENANCE_MODE: 'true', ASSETS: assetBinding }
+    );
+    const body = await response.text();
+    assert.equal(response.status, 503, `maintenance mode should return 503 for ${route}`);
+    assert.match(response.headers.get('cache-control') ?? '', /no-store/, 'maintenance response should not be cached');
+    assert.match(response.headers.get('x-robots-tag') ?? '', /noindex/, 'maintenance response should not be indexed');
+    assert.match(body, /846 Autos Limited/, `maintenance response should use 846 Autos branding for ${route}`);
+  }
+  assert.equal(assetFetches, 0, 'maintenance mode should intercept before static asset handling');
+
+  const headResponse = await maintenanceWorker.fetch(
+    new Request('https://846autos.com/contact', { method: 'HEAD' }),
+    { MAINTENANCE_MODE: 'true', ASSETS: assetBinding }
+  );
+  assert.equal(headResponse.status, 503, 'maintenance mode should handle HEAD requests');
+  assert.equal(await headResponse.text(), '', 'HEAD maintenance response should not contain a body');
+
+  const restoredResponse = await maintenanceWorker.fetch(
+    new Request('https://846autos.com/about'),
+    { MAINTENANCE_MODE: 'false', ASSETS: assetBinding }
+  );
+  assert.equal(restoredResponse.status, 200, 'maintenance mode off should restore normal asset handling');
+  assert.equal(await restoredResponse.text(), 'served:/about', 'normal requests should be forwarded to Workers Static Assets');
+
+  assert.equal(wrangler.main, 'src/worker.js', 'Cloudflare should use the maintenance-aware Worker entry point');
+  assert.equal(wrangler.assets?.binding, 'ASSETS', 'Worker should have a named static asset binding');
+  assert.equal(wrangler.keep_vars, true, 'Wrangler should preserve dashboard-managed variables');
+  await access(new URL('../src/worker.js', import.meta.url));
+  await access(new URL('../docs/MAINTENANCE_MODE.md', import.meta.url));
+
   console.log(
     'Smoke checks passed: production bundle, direct route fallback, mobile keyboard access, clickable carousel controls, local image assets, and Cloudflare SPA configuration.'
   );
