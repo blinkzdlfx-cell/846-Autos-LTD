@@ -15,6 +15,14 @@ export function ServicesPage() {
         </SectionReveal>
 
         <SectionReveal className="mt-14">
+          <div className="grid gap-4 rounded-3xl border border-white/10 bg-white/[.035] p-6 md:grid-cols-2 md:p-8">
+            <div><p className="text-xs uppercase tracking-[.22em] text-white/35">Lounge, Bar & Entertainment</p><h2 className="mt-3 text-2xl font-medium">Open every day</h2><p className="mt-2 text-lg font-medium text-white">12:00 PM – 5:00 AM</p></div>
+            <div className="border-white/10 md:border-l md:pl-7"><p className="text-xs uppercase tracking-[.22em] text-white/35">Car Wash & Vehicle Sales</p><h2 className="mt-3 text-2xl font-medium">Open every day</h2><p className="mt-2 text-lg font-medium text-white">9:00 AM – 8:00 PM</p></div>
+            <p className="text-xs text-white/40 md:col-span-2">All times are West Africa Time (WAT).</p>
+          </div>
+        </SectionReveal>
+
+        <SectionReveal className="mt-14">
           <div className="grid gap-3 rounded-3xl border border-white/10 bg-white/[.035] p-6 md:grid-cols-3 md:p-8">
             <div><p className="text-xs uppercase tracking-[.22em] text-white/35">01 / Leisure</p><h2 className="mt-3 text-2xl font-medium">Make time to unwind</h2><p className="mt-3 text-sm leading-6 text-white/50">Lounge, bar, drinks and DJ entertainment create the social side of 846.</p></div>
             <div className="border-white/10 md:border-l md:pl-7"><p className="text-xs uppercase tracking-[.22em] text-white/35">02 / Games</p><h2 className="mt-3 text-2xl font-medium">Bring on the game</h2><p className="mt-3 text-sm leading-6 text-white/50">Snooker gives friends and guests a reason to play, practise and compete.</p></div>
