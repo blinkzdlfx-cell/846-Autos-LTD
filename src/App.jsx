@@ -154,7 +154,7 @@ export default function App() {
 
     document.title = metadata.title;
 
-    const canonicalUrl = `${window.location.origin}${pathname === '/' ? '/' : pathname}`;
+    const canonicalUrl = `https://846autosltd.com.ng${pathname === '/' ? '/' : pathname}`;
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
       canonicalLink = document.createElement('link');
