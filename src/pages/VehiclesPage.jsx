@@ -13,9 +13,9 @@ export function VehiclesPage() {
     <div className="min-h-screen bg-[#070707] text-white">
       <section className="mx-auto max-w-7xl px-5 pb-20 pt-36 md:px-8 md:pb-28 md:pt-48">
         <SectionReveal>
-          <p className="text-xs font-semibold uppercase tracking-[.28em] text-white/40">Vehicle sales</p>
+          <p className="text-xs font-semibold uppercase tracking-[.28em] text-white/40">Car Lots & Vehicle Sales</p>
           <h1 className="mt-6 max-w-5xl text-5xl font-semibold leading-[.94] tracking-[-.065em] md:text-8xl">A clearer route to your next vehicle.</h1>
-          <p className="mt-8 max-w-3xl text-base leading-8 text-white/60 md:text-lg">846 Autos handles vehicle sales enquiries for customers looking for their next car. Rather than showing a static list that may become outdated, this page gives you a direct route to ask about current stock, confirm important details and discuss the right next step with the team.</p>
+          <p className="mt-8 max-w-3xl text-base leading-8 text-white/60 md:text-lg">Explore the car lots and vehicle sales service at 846 Autos. Contact the team to ask about available cars, confirm details and arrange a viewing. Rather than showing a static list that may become outdated, this page gives you a direct route to ask about current stock, confirm important details and discuss the right next step with the team.</p>
         </SectionReveal>
 
         <SectionReveal className="mt-12">
@@ -23,7 +23,7 @@ export function VehiclesPage() {
             <div className="relative min-h-[260px] overflow-hidden rounded-3xl border border-white/10 bg-[#111] md:min-h-[340px]">
               <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1600&q=85" alt="Modern vehicle exterior" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full scale-[1.06] object-cover object-center opacity-70"/>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/5"/>
-              <p className="absolute bottom-6 left-6 text-sm font-medium text-white/85">Vehicle sales enquiries</p>
+              <p className="absolute bottom-6 left-6 text-sm font-medium text-white/85">Car Lots & Vehicle Sales</p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
               <div className="relative min-h-[160px] overflow-hidden rounded-3xl border border-white/10 bg-[#111]">
@@ -45,7 +45,7 @@ export function VehiclesPage() {
             <div className="pointer-events-none absolute -right-10 -top-12 h-72 w-72 rounded-full border border-white/10"/><div className="pointer-events-none absolute -right-2 top-0 h-52 w-52 rounded-full border border-white/10"/><div className="pointer-events-none absolute right-10 top-10 h-32 w-32 rounded-full border border-white/10"/>
             <div className="relative grid gap-10 md:grid-cols-[.85fr_1.15fr] md:items-end">
               <div><span className="grid size-14 place-items-center rounded-2xl border border-white/10 bg-white/[.05]"><CarFront size={26}/></span><p className="mt-8 text-xs uppercase tracking-[.24em] text-white/40">Vehicle enquiries</p><h2 className="mt-3 text-4xl font-medium tracking-[-.05em] md:text-6xl">Start with what matters to you.</h2></div>
-              <div className="space-y-5 text-sm leading-7 text-white/55"><p>Tell us the type of vehicle you are interested in, your preferred make or model, and any requirements you would like the team to consider. You can also ask about a specific vehicle you have seen or discuss available alternatives.</p><p>Vehicle stock, prices and specifications can change. Always confirm availability, mileage, condition, documentation and other important details directly with 846 Autos before making a decision or payment.</p><a href="/contact?service=Vehicle%20Sales" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black">Enquire about vehicles <ArrowUpRight size={16}/></a></div>
+              <div className="space-y-5 text-sm leading-7 text-white/55"><p>Tell us the type of vehicle you are interested in, your preferred make or model, and any requirements you would like the team to consider. You can also ask about a specific vehicle you have seen or discuss available alternatives.</p><p>Vehicle stock, prices and specifications can change. Always confirm availability, mileage, condition, documentation and other important details directly with 846 Autos before making a decision or payment.</p><a href="/contact?service=Vehicle%20Sales" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black">Enquire about Car Lots <ArrowUpRight size={16}/></a></div>
             </div>
           </div>
         </SectionReveal>
