@@ -11,13 +11,13 @@ export function ServicesPage() {
         <SectionReveal>
           <p className="text-xs font-semibold uppercase tracking-[.28em] text-white/40">Services at 846</p>
           <h1 className="mt-6 max-w-5xl text-5xl font-semibold leading-[.94] tracking-[-.065em] md:text-8xl">Leisure, entertainment and automotive services in one place.</h1>
-          <p className="mt-8 max-w-3xl text-base leading-8 text-white/60 md:text-lg">From a relaxed lounge visit to DJ entertainment, drinks and a game of snooker, 846 offers different ways to enjoy your time. The business also provides practical automotive services, including car wash, vehicle sales enquiries, and clearing and forwarding. Explore the services below and contact the team for current details or availability.</p>
+          <p className="mt-8 max-w-3xl text-base leading-8 text-white/60 md:text-lg">From a relaxed lounge visit to DJ entertainment, drinks and a game of snooker, 846 offers different ways to enjoy your time. The business also provides practical automotive services, including car wash, car lots and vehicle sales enquiries, and clearing and forwarding. Explore the services below and contact the team for current details or availability.</p>
         </SectionReveal>
 
         <SectionReveal className="mt-14">
           <div className="grid gap-4 rounded-3xl border border-white/10 bg-white/[.035] p-6 md:grid-cols-2 md:p-8">
             <div><p className="text-xs uppercase tracking-[.22em] text-white/35">Lounge, Bar & Entertainment</p><h2 className="mt-3 text-2xl font-medium">Open every day</h2><p className="mt-2 text-lg font-medium text-white">12:00 PM – 5:00 AM</p></div>
-            <div className="border-white/10 md:border-l md:pl-7"><p className="text-xs uppercase tracking-[.22em] text-white/35">Car Wash & Vehicle Sales</p><h2 className="mt-3 text-2xl font-medium">Open every day</h2><p className="mt-2 text-lg font-medium text-white">9:00 AM – 8:00 PM</p></div>
+            <div className="border-white/10 md:border-l md:pl-7"><p className="text-xs uppercase tracking-[.22em] text-white/35">Car Wash & Car Lots</p><h2 className="mt-3 text-2xl font-medium">Open every day</h2><p className="mt-2 text-lg font-medium text-white">9:00 AM – 8:00 PM</p></div>
             <p className="text-xs text-white/40 md:col-span-2">All times are West Africa Time (WAT).</p>
           </div>
         </SectionReveal>
@@ -26,7 +26,7 @@ export function ServicesPage() {
           <div className="grid gap-3 rounded-3xl border border-white/10 bg-white/[.035] p-6 md:grid-cols-3 md:p-8">
             <div><p className="text-xs uppercase tracking-[.22em] text-white/35">01 / Leisure</p><h2 className="mt-3 text-2xl font-medium">Make time to unwind</h2><p className="mt-3 text-sm leading-6 text-white/50">Lounge, bar, drinks and DJ entertainment create the social side of 846.</p></div>
             <div className="border-white/10 md:border-l md:pl-7"><p className="text-xs uppercase tracking-[.22em] text-white/35">02 / Games</p><h2 className="mt-3 text-2xl font-medium">Bring on the game</h2><p className="mt-3 text-sm leading-6 text-white/50">Snooker gives friends and guests a reason to play, practise and compete.</p></div>
-            <div className="border-white/10 md:border-l md:pl-7"><p className="text-xs uppercase tracking-[.22em] text-white/35">03 / Automotive</p><h2 className="mt-3 text-2xl font-medium">Take care of the details</h2><p className="mt-3 text-sm leading-6 text-white/50">Car wash, vehicle sales and clearing and forwarding enquiries are also handled by 846 Autos.</p></div>
+            <div className="border-white/10 md:border-l md:pl-7"><p className="text-xs uppercase tracking-[.22em] text-white/35">03 / Automotive</p><h2 className="mt-3 text-2xl font-medium">Take care of the details</h2><p className="mt-3 text-sm leading-6 text-white/50">Car wash, car lots and vehicle sales, and clearing and forwarding enquiries are also handled by 846 Autos.</p></div>
           </div>
         </SectionReveal>
 
