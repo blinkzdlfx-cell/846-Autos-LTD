@@ -6,7 +6,7 @@ const highlights = [
   { icon: Music2, title: 'Music and atmosphere', text: 'DJ entertainment adds rhythm and energy to the experience, creating a setting for guests to meet, relax and enjoy their time.' },
   { icon: Coffee, title: 'The lounge and bar', text: 'A social space for conversations, refreshments and unhurried moments. Guests can make the lounge the start or the centrepiece of their visit.' },
   { icon: Trophy, title: 'Snooker and friendly competition', text: 'A game gives friends and visitors another way to connect. Whether you play casually or take your shots seriously, snooker is part of the 846 experience.' },
-  { icon: CarFront, title: 'Automotive services', text: 'Beyond leisure, 846 Autos supports vehicle-related needs through car wash, vehicle sales enquiries, and clearing and forwarding services.' },
+  { icon: CarFront, title: 'Automotive services', text: 'Beyond leisure, 846 Autos supports vehicle-related needs through car wash, car lots and vehicle sales, and clearing and forwarding services.' },
 ];
 
 export function AboutPage() {
@@ -16,7 +16,7 @@ export function AboutPage() {
         <SectionReveal>
           <p className="text-xs font-semibold uppercase tracking-[.28em] text-white/40">About 846 Autos Limited</p>
           <h1 className="mt-6 max-w-5xl text-5xl font-semibold leading-[.94] tracking-[-.065em] md:text-8xl">One destination. More ways to spend your time.</h1>
-          <p className="mt-8 max-w-3xl text-base leading-8 text-white/65 md:text-lg">846 Autos Limited brings leisure, entertainment and automotive services together. The lounge and bar create a place to relax and connect; DJ entertainment and drinks shape the atmosphere; snooker adds a little friendly competition. Alongside the social experience, the business also serves customers looking for car wash, vehicle sales and clearing and forwarding support.</p>
+          <p className="mt-8 max-w-3xl text-base leading-8 text-white/65 md:text-lg">846 Autos Limited brings leisure, entertainment and automotive services together. The lounge and bar create a place to relax and connect; DJ entertainment and drinks shape the atmosphere; snooker adds a little friendly competition. Alongside the social experience, the business also serves customers looking for car wash, car lots and vehicle sales, and clearing and forwarding support.</p>
         </SectionReveal>
 
         <SectionReveal className="mt-16">
@@ -57,7 +57,7 @@ export function AboutPage() {
         <SectionReveal className="mt-20">
           <div className="grid gap-8 border-t border-white/10 pt-10 md:grid-cols-[.7fr_1.3fr]">
             <div><p className="text-xs uppercase tracking-[.25em] text-white/35">Our approach</p><h2 className="mt-4 text-3xl font-medium tracking-[-.04em] md:text-4xl">Straightforward service. A welcoming experience.</h2></div>
-            <div className="space-y-5 text-sm leading-7 text-white/55"><p>We want visitors to understand what 846 offers and how to reach the team without having to work through a complicated catalogue. The website brings the key services together, explains what each one is for and provides a direct route for questions.</p><p>For services that depend on current availability—such as vehicle stock, specific wash options, entertainment arrangements or clearing and forwarding requirements—customers are encouraged to contact the team for up-to-date information before making plans.</p><a href="/services" className="inline-flex items-center gap-2 text-white/85 hover:text-white">Explore our services <ArrowUpRight size={16}/></a></div>
+            <div className="space-y-5 text-sm leading-7 text-white/55"><p>We want visitors to understand what 846 offers and how to reach the team without having to work through a complicated catalogue. The website brings the key services together, explains what each one is for and provides a direct route for questions.</p><p>For services that depend on current availability—such as car lot stock, specific wash options, entertainment arrangements or clearing and forwarding requirements—customers are encouraged to contact the team for up-to-date information before making plans.</p><a href="/services" className="inline-flex items-center gap-2 text-white/85 hover:text-white">Explore our services <ArrowUpRight size={16}/></a></div>
           </div>
         </SectionReveal>
 
