@@ -114,9 +114,9 @@ export default function App() {
   useEffect(() => {
     const pageMetadata = {
       '/': {
-        title: '846 Autos Limited | Lounge, Bar, DJ Entertainment & Automotive Services',
+        title: '846 Autos Limited | VIP Lounge, Bar, Car Wash & Vehicle Sales in Lagos',
         description:
-          "Explore 846 Autos Limited's lounge and bar, DJ entertainment, drinks, snooker, car wash, vehicle sales, and clearing and forwarding services.",
+          "Visit 846 Autos Limited in Ijegun, Lagos for our VIP lounge and bar, DJ entertainment, drinks, snooker, car wash, vehicle sales, and clearing and forwarding services. Lounge opens daily from 12 PM to 5 AM; car wash and vehicle sales operate from 9 AM to 8 PM.",
       },
       '/about': {
         title: 'About 846 Autos Limited',
@@ -126,7 +126,7 @@ export default function App() {
       '/services': {
         title: 'Services | 846 Autos Limited',
         description:
-          'Explore the lounge, bar, DJ entertainment, drinks, snooker, car wash, vehicle sales, and clearing and forwarding services presented by 846 Autos.',
+          'Explore VIP lounge and bar, DJ entertainment, drinks, snooker, car wash, vehicle sales, and clearing and forwarding services at 846 Autos Limited in Ijegun, Lagos.',
       },
       '/vehicles': {
         title: 'Vehicle Sales | 846 Autos Limited',
@@ -136,7 +136,7 @@ export default function App() {
       '/contact': {
         title: 'Contact | 846 Autos Limited',
         description:
-          'Reach 846 Autos Limited by phone, WhatsApp, or email for lounge, bar, DJ entertainment, drinks, snooker, vehicle sales, car wash, and clearing & forwarding enquiries.',
+          'Contact 846 Autos Limited in Ijegun, Lagos for lounge bookings, car wash, vehicle sales, entertainment, and clearing and forwarding enquiries. Lounge: 12 PM–5 AM daily. Car wash and vehicle sales: 9 AM–8 PM.',
       },
       '/privacy-policy': {
         title: 'Privacy Policy | 846 Autos Limited',
@@ -197,7 +197,7 @@ export default function App() {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       name: '846 Autos Limited',
-      url: window.location.origin,
+      url: 'https://846autosltd.com.ng',
       telephone: '09075505454',
       email: 'enquiries@846autos.com',
       address: {
@@ -209,9 +209,27 @@ export default function App() {
       openingHoursSpecification: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].map(dayOfWeek => ({
         '@type': 'OpeningHoursSpecification',
         dayOfWeek,
-        opens: '09:00',
-        closes: '22:00',
+        opens: '12:00',
+        closes: '05:00',
       })),
+      department: [
+        {
+          '@type': 'AutomotiveBusiness',
+          name: '846 Autos Car Wash',
+          url: 'https://846autosltd.com.ng/services',
+          openingHoursSpecification: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].map(dayOfWeek => ({
+            '@type': 'OpeningHoursSpecification', dayOfWeek, opens: '09:00', closes: '20:00',
+          })),
+        },
+        {
+          '@type': 'AutoDealer',
+          name: '846 Autos Vehicle Sales',
+          url: 'https://846autosltd.com.ng/vehicles',
+          openingHoursSpecification: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].map(dayOfWeek => ({
+            '@type': 'OpeningHoursSpecification', dayOfWeek, opens: '09:00', closes: '20:00',
+          })),
+        },
+      ],
       sameAs: ['https://wa.me/2347033301798'],
       description: metadata.description,
     });
