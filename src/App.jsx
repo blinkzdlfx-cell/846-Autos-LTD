@@ -114,9 +114,9 @@ export default function App() {
   useEffect(() => {
     const pageMetadata = {
       '/': {
-        title: '846 Autos Limited | VIP Lounge, Bar, Car Wash & Vehicle Sales in Lagos',
+        title: '846 Autos Limited | VIP Lounge, Bar, Car Wash & Car Lots in Lagos',
         description:
-          "Visit 846 Autos Limited in Ijegun, Lagos for our VIP lounge and bar, DJ entertainment, drinks, snooker, car wash, vehicle sales, and clearing and forwarding services. Lounge opens daily from 12 PM to 5 AM; car wash and vehicle sales operate from 9 AM to 8 PM.",
+          "Visit 846 Autos Limited in Ijegun, Lagos for our VIP lounge and bar, DJ entertainment, drinks, snooker, car wash, car lots, car lots, vehicle sales, and clearing and forwarding services. Lounge opens daily from 12 PM to 5 AM; car wash and vehicle sales operate from 9 AM to 8 PM.",
       },
       '/about': {
         title: 'About 846 Autos Limited',
@@ -126,7 +126,7 @@ export default function App() {
       '/services': {
         title: 'Services | 846 Autos Limited',
         description:
-          'Explore VIP lounge and bar, DJ entertainment, drinks, snooker, car wash, vehicle sales, and clearing and forwarding services at 846 Autos Limited in Ijegun, Lagos.',
+          'Explore VIP lounge and bar, DJ entertainment, drinks, snooker, car wash, car lots, vehicle sales, and clearing and forwarding services at 846 Autos Limited in Ijegun, Lagos.',
       },
       '/vehicles': {
         title: 'Vehicle Sales | 846 Autos Limited',
@@ -223,7 +223,7 @@ export default function App() {
         },
         {
           '@type': 'AutoDealer',
-          name: '846 Autos Vehicle Sales',
+          name: '846 Autos Car Lots & Vehicle Sales',
           url: 'https://846autosltd.com.ng/vehicles',
           openingHoursSpecification: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].map(dayOfWeek => ({
             '@type': 'OpeningHoursSpecification', dayOfWeek, opens: '09:00', closes: '20:00',
@@ -356,7 +356,7 @@ export default function App() {
                       />
                     </h1>
                     <p className="mt-8 max-w-xl text-sm leading-6 text-white/60 md:text-base">
-                      Make yourself at home at the lounge and bar, enjoy the music, share a drink or play a game of snooker. 846 also offers car wash, vehicle sales, and clearing and forwarding services.
+                      Make yourself at home at the lounge and bar, enjoy the music, share a drink or play a game of snooker. 846 also offers car wash, car lots, car lots, vehicle sales, and clearing and forwarding services.
                     </p>
                     <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                       <Button
@@ -500,13 +500,13 @@ export default function App() {
                       />
                       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black/85 via-black/65 to-black/35" />
                       <p className="text-xs uppercase tracking-[.24em] text-white/60">
-                        Vehicle enquiries
+                        Car Lots & Vehicle Enquiries
                       </p>
                       <p className="mt-4 max-w-xl text-lg leading-7 text-white/90 md:text-xl md:leading-8">
-                        Looking for your next vehicle? Speak with the 846 Autos team about current availability, condition, specifications and pricing. You can also arrange a viewing and get the details you need before making a decision.
+                        Looking for your next car? Speak with the 846 Autos team about current availability, condition, specifications and pricing. You can also arrange a viewing and get the details you need before making a decision.
                       </p>
                       <span className="mt-6 inline-flex items-center rounded-full border border-white/25 bg-black/20 px-3 py-1.5 text-xs text-white/75 backdrop-blur-sm">
-                        Ask about available vehicles
+                        Explore our Car Lots
                       </span>
                     </div>
                   </div>
