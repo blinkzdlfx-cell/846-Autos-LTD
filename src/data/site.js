@@ -185,9 +185,9 @@ export const services = [
   },
   {
     number: '06',
-    name: 'Vehicle Sales',
-    eyebrow: 'Find your next vehicle',
-    description: 'Explore vehicle sales through 846 Autos. Contact the team for current stock, verified specifications, condition and pricing, then arrange an inspection or viewing before you decide.',
+    name: 'Car Lots & Vehicle Sales',
+    eyebrow: 'Car Lots & Vehicle Sales',
+    description: 'Explore the car lots and vehicle sales service at 846 Autos. Contact the team for current stock, verified specifications, condition and pricing, then arrange an inspection or viewing before you decide.',
     image: vehicleSalesImage,
     homeImage: vehicleSalesImage,
     icon: 'car',
