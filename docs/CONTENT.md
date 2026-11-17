@@ -10,7 +10,7 @@ Only use verified company information. Do not fabricate company history, years o
 ### Contact
 - Phone: 09075505454 (verified by owner)
 - WhatsApp: 07033301798 (verified by owner)
-- Email: enquiries@846autos.com
+- Email: info@846autosltd.com.ng
 
 ### Legal
 - Privacy Policy: `/privacy-policy`
