@@ -30,7 +30,7 @@ React, Vite, Tailwind CSS v4, shadcn/ui conventions, Motion, Lucide icons and Cl
 
 - Phone: 09075505454
 - WhatsApp: 07033301798
-- Email: enquiries@846autos.com
+- Email: info@846autosltd.com.ng
 
 ## Content rule
 
