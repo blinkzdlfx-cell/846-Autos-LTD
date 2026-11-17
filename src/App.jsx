@@ -199,7 +199,7 @@ export default function App() {
       name: '846 Autos Limited',
       url: 'https://846autosltd.com.ng',
       telephone: '09075505454',
-      email: 'enquiries@846autos.com',
+      email: 'info@846autosltd.com.ng',
       address: {
         '@type': 'PostalAddress',
         streetAddress: '182 Ijegun Road, Ore-Ofe Bus Stop, Ijegun',
