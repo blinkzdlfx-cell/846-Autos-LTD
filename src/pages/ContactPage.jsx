@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ArrowUpRight, Phone, MessageCircle, MapPin, Clock, Mail, Send, CheckCircle2 } from 'lucide-react';
 import { SectionReveal } from '../components/SectionReveal';
 
-const CONTACT_EMAIL = 'enquiries@846autos.com';
+const CONTACT_EMAIL = 'info@846autosltd.com.ng';
 const WHATSAPP_NUMBER = '2347033301798';
 const DISPLAY_WHATSAPP = '07033301798';
 
